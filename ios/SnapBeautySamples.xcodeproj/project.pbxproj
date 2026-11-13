@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+AA0000000000000000000002 = {isa = XCSwiftPackageProductDependency; productName = SnapBeautySDK; };
+AA0000000000000000000003 = {isa = XCRemoteSwiftPackageReference; repositoryURL = "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git"; requirement = {kind = exactVersion; version = 1.3.0; }; };
+/* Begin PBXBuildFile section */
+		AA0000000000000000000001 = {isa = PBXBuildFile; productRef = AA0000000000000000000002; };
+		038151D1A31BB5B6532B8190 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58BDA34802868CDC84E4F1B8 /* AudioToolbox.framework */; };
+
+		072DF20521AC026EC72E9566 /* SceneControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113EFE224E1FCD4947F8B53C /* SceneControls.swift */; };
+		0A7A19924F4E56B99BAE6D68 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACE8ECD4CD627CF7AFFD8C9 /* Photos.framework */; };
+		0F818ED2D7F9045DD2F83CDC /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6564B5FB170BB7469871BD /* SampleTests.swift */; };
+		11C158D681C53699312B5F10 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EC225C3EA035A15A42D6E9 /* libz.tbd */; };
+		131C15D8DE4A88E42AE0FB66 /* TXSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFCE72C1CA83DE621C03E10 /* TXSoundTouch.xcframework */; };
+		20E0934817D66CD9D8BBBEF7 /* Agorafdkaac.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52213260BEE046833E336F70 /* Agorafdkaac.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AF7B82D72D4833E28E84E0D /* aosl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6344548F6A29817508376C3C /* aosl.xcframework */; };
+		2B8E62014796AC4A2122297C /* AgoraSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A37AC285BDF04737A17BDD /* AgoraSoundTouch.xcframework */; };
+		450F52477EF00F8DA45EAB73 /* SampleRTCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D843C83D98F8ABD60FBCE9 /* SampleRTCSession.m */; };
+		4512C64C1E1C266C488F0C77 /* Agoraffmpeg.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D88E5F8AC73CC2B421B285D1 /* Agoraffmpeg.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		457FCBF77B7421E0E069D233 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E045A3B4D179DC12C86D5867 /* ReplayKit.framework */; };
+		4D9892033C885CB11D97E2E7 /* TXFFmpeg.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4343D78FAF7A0D9F6DCF22AC /* TXFFmpeg.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4EA359CF8DC5DB96B6F4FD6E /* AgoraRtcKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1543917739A76A363086AF /* AgoraRtcKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54656BAC6DC3301BA6602D32 /* video_dec.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C8210FF9405E0D3FE3985D /* video_dec.xcframework */; };
+		549A6DDBE7F801D5509E6163 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 486CB9B20E81F6379B55E36A /* libc++.tbd */; };
+		6240D14F3D2311C37B8348A4 /* Agorafdkaac.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52213260BEE046833E336F70 /* Agorafdkaac.xcframework */; };
+		6743D4EDAD0CA29E6F24C029 /* Verification in Resources */ = {isa = PBXBuildFile; fileRef = AD48F0344EA2EE33A08FED58 /* Verification */; };
+		697D7B9A7F90953B17ED3E09 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16A445F58F969721802BD47F /* CoreImage.framework */; };
+		7198E026AD8A8D1738A900D9 /* TXFFmpeg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4343D78FAF7A0D9F6DCF22AC /* TXFFmpeg.xcframework */; };
+		7367DC7F1D4D838A4D24B2B1 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09CB3B7703838ED6FBFA9CA /* CoreVideo.framework */; };
+		7833EBEC1D056E2E338337AF /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6238C84E673F8CD195E52E35 /* Network.framework */; };
+		847ED9E09E4D4FAC7010785E /* aosl.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6344548F6A29817508376C3C /* aosl.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		857C38DC01F9F149EBB2C765 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916E2B15B2EE2BD10D0222E0 /* CoreTelephony.framework */; };
+		85F91C3D1AEF6055C8E08918 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F867B847B87BE6F20657C6CC /* AVFoundation.framework */; };
+		8AF3E6B80F8391B17E26F172 /* ZegoExpressEngine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B45D56A37C8F0C6E27B3A /* ZegoExpressEngine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		919AF9976194ECAC0AA156C9 /* Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F3561C182E99CC89AA083 /* Effects.swift */; };
+		9856F8D040D48F67AE3F21A9 /* VideoPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22C236C5C53CCE0ACA3FB60 /* VideoPipeline.swift */; };
+		9B4FE281F5355B202E578D5D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFC742C4E5ADE6BE4C3246F /* Metal.framework */; };
+		9C87D6298D088A8D1EA7680F /* AgoraRtcKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1543917739A76A363086AF /* AgoraRtcKit.xcframework */; };
+		B5A4E72FC70008CD041D904E /* SceneSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD293BE07304CD3191D03040 /* SceneSession.swift */; };
+		B862B503C8F18F956DB8434B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091274D6FA423B0CC3E70C99 /* SystemConfiguration.framework */; };
+		BBF34D09A24C91A8260CBC58 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF53ED724C27B13D877ED2C9 /* Accelerate.framework */; };
+		BC5685319E2EB0996A62EE3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57374681E7A0093933C6B9BB /* Assets.xcassets */; };
+		C211196D69EA477C94D1DC30 /* video_dec.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11C8210FF9405E0D3FE3985D /* video_dec.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C594FB2F44A47BD1729ED691 /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F47BA79DC68A100497968B /* NavigationTests.swift */; };
+		C5C9EDA843C86505C6F6A702 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA673C8C439F7EE996E942 /* libsqlite3.tbd */; };
+		DC4DF02CE019732014B67A7C /* ZegoExpressEngine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9B45D56A37C8F0C6E27B3A /* ZegoExpressEngine.xcframework */; };
+		DE53FA1B817DA022A7A8FBBD /* AgoraSoundTouch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63A37AC285BDF04737A17BDD /* AgoraSoundTouch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4AF0F3A632E6FF9065DF134 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D582D086634600DBE94A4438 /* VideoToolbox.framework */; };
+		E553C35EFCE0011352D71BA0 /* BeautyFrameProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2E729CCD90F5660BA7398A40 /* BeautyFrameProcessor.mm */; };
+		E95BAD23ACFEDB839ADEAC2B /* TXSoundTouch.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFCE72C1CA83DE621C03E10 /* TXSoundTouch.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F159A8559B3D0A7EBBC506AD /* TXLiteAVSDK_TRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA28F7A9EEDD0A46D684794 /* TXLiteAVSDK_TRTC.xcframework */; };
+		F1F402D8A0EA108AD721AC3F /* TXLiteAVSDK_TRTC.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA28F7A9EEDD0A46D684794 /* TXLiteAVSDK_TRTC.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F241C349288197E675696578 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C31DBB34F9FA39C9E734327 /* CoreMedia.framework */; };
+		F506152D4A5CCC92839671DC /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAEFCF6F49306345543A36E /* MetalKit.framework */; };
+		F67EA7BB5BFD3879A68ABFC3 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = D7E8A4F7E7740D09B36F1923 /* Assets */; };
+		F8253FA4C6DFCFBE2A69A81E /* Agoraffmpeg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E5F8AC73CC2B421B285D1 /* Agoraffmpeg.xcframework */; };
+		FA6EBAE5C4474373463A2759 /* SnapBeautySamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5254015E1B9DFF8B4795B2A2 /* SnapBeautySamplesApp.swift */; };
+		FBC39740C349FA6D083A5C3A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 344903ED2C79BA69ED1D024C /* libresolv.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52A25A2252B805AD9E95AD9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE04D0BF79C2DB7784E66483 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D69859CCE09DC7529C03C9;
+			remoteInfo = SnapBeautySamples;
+		};
+		A2EC4CB55B307C76ABC956BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE04D0BF79C2DB7784E66483 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42D69859CCE09DC7529C03C9;
+			remoteInfo = SnapBeautySamples;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBD255486567BB49C51B9755 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4EA359CF8DC5DB96B6F4FD6E /* AgoraRtcKit.xcframework in Embed Frameworks */,
+				DE53FA1B817DA022A7A8FBBD /* AgoraSoundTouch.xcframework in Embed Frameworks */,
+				20E0934817D66CD9D8BBBEF7 /* Agorafdkaac.xcframework in Embed Frameworks */,
+				4512C64C1E1C266C488F0C77 /* Agoraffmpeg.xcframework in Embed Frameworks */,
+				4D9892033C885CB11D97E2E7 /* TXFFmpeg.xcframework in Embed Frameworks */,
+				F1F402D8A0EA108AD721AC3F /* TXLiteAVSDK_TRTC.xcframework in Embed Frameworks */,
+				E95BAD23ACFEDB839ADEAC2B /* TXSoundTouch.xcframework in Embed Frameworks */,
+				8AF3E6B80F8391B17E26F172 /* ZegoExpressEngine.xcframework in Embed Frameworks */,
+				847ED9E09E4D4FAC7010785E /* aosl.xcframework in Embed Frameworks */,
+				C211196D69EA477C94D1DC30 /* video_dec.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+
+		07B819D4B6644E9E03FE145F /* SampleRTCSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleRTCSession.h; sourceTree = "<group>"; };
+		091274D6FA423B0CC3E70C99 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		113EFE224E1FCD4947F8B53C /* SceneControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneControls.swift; sourceTree = "<group>"; };
+		11C8210FF9405E0D3FE3985D /* video_dec.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = video_dec.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/video_dec.xcframework; sourceTree = "<group>"; };
+		16A445F58F969721802BD47F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1C31DBB34F9FA39C9E734327 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		2E729CCD90F5660BA7398A40 /* BeautyFrameProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BeautyFrameProcessor.mm; sourceTree = "<group>"; };
+		2EFCE72C1CA83DE621C03E10 /* TXSoundTouch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TXSoundTouch.xcframework; path = .local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXSoundTouch.xcframework; sourceTree = "<group>"; };
+		344903ED2C79BA69ED1D024C /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		3B1543917739A76A363086AF /* AgoraRtcKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraRtcKit.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/AgoraRtcKit.xcframework; sourceTree = "<group>"; };
+		42D843C83D98F8ABD60FBCE9 /* SampleRTCSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleRTCSession.m; sourceTree = "<group>"; };
+		4343D78FAF7A0D9F6DCF22AC /* TXFFmpeg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TXFFmpeg.xcframework; path = .local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXFFmpeg.xcframework; sourceTree = "<group>"; };
+		486CB9B20E81F6379B55E36A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		48F47BA79DC68A100497968B /* NavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTests.swift; sourceTree = "<group>"; };
+		52213260BEE046833E336F70 /* Agorafdkaac.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agorafdkaac.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/Agorafdkaac.xcframework; sourceTree = "<group>"; };
+		5254015E1B9DFF8B4795B2A2 /* SnapBeautySamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapBeautySamplesApp.swift; sourceTree = "<group>"; };
+		553CF0639839A4160359002A /* BeautyFrameProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeautyFrameProcessor.h; sourceTree = "<group>"; };
+		57374681E7A0093933C6B9BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58BDA34802868CDC84E4F1B8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6238C84E673F8CD195E52E35 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		6344548F6A29817508376C3C /* aosl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = aosl.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/aosl.xcframework; sourceTree = "<group>"; };
+		63A37AC285BDF04737A17BDD /* AgoraSoundTouch.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AgoraSoundTouch.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/AgoraSoundTouch.xcframework; sourceTree = "<group>"; };
+		6EA28F7A9EEDD0A46D684794 /* TXLiteAVSDK_TRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TXLiteAVSDK_TRTC.xcframework; path = .local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC.xcframework; sourceTree = "<group>"; };
+		74377E0B3218FE50D3475534 /* SnapBeautySamplesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SnapBeautySamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7895B3A1889A755549A09957 /* SnapBeautySamplesUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SnapBeautySamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA673C8C439F7EE996E942 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8FFC742C4E5ADE6BE4C3246F /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		916E2B15B2EE2BD10D0222E0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9B9B45D56A37C8F0C6E27B3A /* ZegoExpressEngine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ZegoExpressEngine.xcframework; path = .local/vendors/ZegoExpressEngine/release/Library/ZegoExpressEngine.xcframework; sourceTree = "<group>"; };
+		AD48F0344EA2EE33A08FED58 /* Verification */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Verification; path = .local/Verification; sourceTree = SOURCE_ROOT; };
+		AF53ED724C27B13D877ED2C9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B8EBC73A20185E932E5EFE4E /* SnapBeautySamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnapBeautySamples-Bridging-Header.h"; sourceTree = "<group>"; };
+		BDAEFCF6F49306345543A36E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		BE85A97481F9D20D8F457400 /* SnapBeautySamples.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SnapBeautySamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09CB3B7703838ED6FBFA9CA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CD293BE07304CD3191D03040 /* SceneSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSession.swift; sourceTree = "<group>"; };
+		D13F3561C182E99CC89AA083 /* Effects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effects.swift; sourceTree = "<group>"; };
+		D582D086634600DBE94A4438 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		D7E8A4F7E7740D09B36F1923 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = .local/HostAssets/Assets; sourceTree = SOURCE_ROOT; };
+		D88E5F8AC73CC2B421B285D1 /* Agoraffmpeg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Agoraffmpeg.xcframework; path = .local/vendors/AgoraRtcEngine_iOS/Agoraffmpeg.xcframework; sourceTree = "<group>"; };
+		DACE8ECD4CD627CF7AFFD8C9 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		DC6564B5FB170BB7469871BD /* SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTests.swift; sourceTree = "<group>"; };
+		E045A3B4D179DC12C86D5867 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		E6EC225C3EA035A15A42D6E9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		F22C236C5C53CCE0ACA3FB60 /* VideoPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPipeline.swift; sourceTree = "<group>"; };
+		F867B847B87BE6F20657C6CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0C1C63B3B8E0D55B7BF38EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000000000000000000001,
+				9C87D6298D088A8D1EA7680F /* AgoraRtcKit.xcframework in Frameworks */,
+				2B8E62014796AC4A2122297C /* AgoraSoundTouch.xcframework in Frameworks */,
+				6240D14F3D2311C37B8348A4 /* Agorafdkaac.xcframework in Frameworks */,
+				F8253FA4C6DFCFBE2A69A81E /* Agoraffmpeg.xcframework in Frameworks */,
+				7198E026AD8A8D1738A900D9 /* TXFFmpeg.xcframework in Frameworks */,
+				F159A8559B3D0A7EBBC506AD /* TXLiteAVSDK_TRTC.xcframework in Frameworks */,
+				131C15D8DE4A88E42AE0FB66 /* TXSoundTouch.xcframework in Frameworks */,
+				DC4DF02CE019732014B67A7C /* ZegoExpressEngine.xcframework in Frameworks */,
+				2AF7B82D72D4833E28E84E0D /* aosl.xcframework in Frameworks */,
+				54656BAC6DC3301BA6602D32 /* video_dec.xcframework in Frameworks */,
+				85F91C3D1AEF6055C8E08918 /* AVFoundation.framework in Frameworks */,
+				9B4FE281F5355B202E578D5D /* Metal.framework in Frameworks */,
+				7367DC7F1D4D838A4D24B2B1 /* CoreVideo.framework in Frameworks */,
+				F241C349288197E675696578 /* CoreMedia.framework in Frameworks */,
+				697D7B9A7F90953B17ED3E09 /* CoreImage.framework in Frameworks */,
+				F506152D4A5CCC92839671DC /* MetalKit.framework in Frameworks */,
+				BBF34D09A24C91A8260CBC58 /* Accelerate.framework in Frameworks */,
+				038151D1A31BB5B6532B8190 /* AudioToolbox.framework in Frameworks */,
+				E4AF0F3A632E6FF9065DF134 /* VideoToolbox.framework in Frameworks */,
+				7833EBEC1D056E2E338337AF /* Network.framework in Frameworks */,
+				B862B503C8F18F956DB8434B /* SystemConfiguration.framework in Frameworks */,
+				857C38DC01F9F149EBB2C765 /* CoreTelephony.framework in Frameworks */,
+				0A7A19924F4E56B99BAE6D68 /* Photos.framework in Frameworks */,
+				457FCBF77B7421E0E069D233 /* ReplayKit.framework in Frameworks */,
+				549A6DDBE7F801D5509E6163 /* libc++.tbd in Frameworks */,
+				11C158D681C53699312B5F10 /* libz.tbd in Frameworks */,
+				C5C9EDA843C86505C6F6A702 /* libsqlite3.tbd in Frameworks */,
+				FBC39740C349FA6D083A5C3A /* libresolv.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034D67AEFC5059D6D1ACA08D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57374681E7A0093933C6B9BB /* Assets.xcassets */,
+				5254015E1B9DFF8B4795B2A2 /* SnapBeautySamplesApp.swift */,
+				D13F3561C182E99CC89AA083 /* Effects.swift */,
+				113EFE224E1FCD4947F8B53C /* SceneControls.swift */,
+				CD293BE07304CD3191D03040 /* SceneSession.swift */,
+				F22C236C5C53CCE0ACA3FB60 /* VideoPipeline.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0F7767B939D202F2EBCFF2A3 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				48F47BA79DC68A100497968B /* NavigationTests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		2E9A9AAA7E3D114593D905DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF53ED724C27B13D877ED2C9 /* Accelerate.framework */,
+				52213260BEE046833E336F70 /* Agorafdkaac.xcframework */,
+				D88E5F8AC73CC2B421B285D1 /* Agoraffmpeg.xcframework */,
+				3B1543917739A76A363086AF /* AgoraRtcKit.xcframework */,
+				63A37AC285BDF04737A17BDD /* AgoraSoundTouch.xcframework */,
+				6344548F6A29817508376C3C /* aosl.xcframework */,
+				58BDA34802868CDC84E4F1B8 /* AudioToolbox.framework */,
+				F867B847B87BE6F20657C6CC /* AVFoundation.framework */,
+				16A445F58F969721802BD47F /* CoreImage.framework */,
+				1C31DBB34F9FA39C9E734327 /* CoreMedia.framework */,
+				916E2B15B2EE2BD10D0222E0 /* CoreTelephony.framework */,
+				C09CB3B7703838ED6FBFA9CA /* CoreVideo.framework */,
+				486CB9B20E81F6379B55E36A /* libc++.tbd */,
+				344903ED2C79BA69ED1D024C /* libresolv.tbd */,
+				80CA673C8C439F7EE996E942 /* libsqlite3.tbd */,
+				E6EC225C3EA035A15A42D6E9 /* libz.tbd */,
+				8FFC742C4E5ADE6BE4C3246F /* Metal.framework */,
+				BDAEFCF6F49306345543A36E /* MetalKit.framework */,
+				6238C84E673F8CD195E52E35 /* Network.framework */,
+				DACE8ECD4CD627CF7AFFD8C9 /* Photos.framework */,
+				E045A3B4D179DC12C86D5867 /* ReplayKit.framework */,
+				091274D6FA423B0CC3E70C99 /* SystemConfiguration.framework */,
+				4343D78FAF7A0D9F6DCF22AC /* TXFFmpeg.xcframework */,
+				6EA28F7A9EEDD0A46D684794 /* TXLiteAVSDK_TRTC.xcframework */,
+				2EFCE72C1CA83DE621C03E10 /* TXSoundTouch.xcframework */,
+				11C8210FF9405E0D3FE3985D /* video_dec.xcframework */,
+				D582D086634600DBE94A4438 /* VideoToolbox.framework */,
+				9B9B45D56A37C8F0C6E27B3A /* ZegoExpressEngine.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B65B164362587949C57F454 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DC6564B5FB170BB7469871BD /* SampleTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		95CBB7A00D968FD8586BB24D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE85A97481F9D20D8F457400 /* SnapBeautySamples.app */,
+				74377E0B3218FE50D3475534 /* SnapBeautySamplesTests.xctest */,
+				7895B3A1889A755549A09957 /* SnapBeautySamplesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A355C72CD6A4C339DE23952E = {
+			isa = PBXGroup;
+			children = (
+				D7E8A4F7E7740D09B36F1923 /* Assets */,
+				AD48F0344EA2EE33A08FED58 /* Verification */,
+				034D67AEFC5059D6D1ACA08D /* App */,
+				B084D0834A8961724362C52B /* Bridge */,
+				6B65B164362587949C57F454 /* Tests */,
+				0F7767B939D202F2EBCFF2A3 /* UITests */,
+				2E9A9AAA7E3D114593D905DF /* Frameworks */,
+				95CBB7A00D968FD8586BB24D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B084D0834A8961724362C52B /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				553CF0639839A4160359002A /* BeautyFrameProcessor.h */,
+				2E729CCD90F5660BA7398A40 /* BeautyFrameProcessor.mm */,
+				B8EBC73A20185E932E5EFE4E /* SnapBeautySamples-Bridging-Header.h */,
+				07B819D4B6644E9E03FE145F /* SampleRTCSession.h */,
+				42D843C83D98F8ABD60FBCE9 /* SampleRTCSession.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0B52C723CB2F6AF94EDE925F /* SnapBeautySamplesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF4F4FE09948B22AE6A61E8E /* Build configuration list for PBXNativeTarget "SnapBeautySamplesUITests" */;
+			buildPhases = (
+				B89B8A08E9F8453E951DBB5C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B52945156ED6A176C60B281 /* PBXTargetDependency */,
+			);
+			name = SnapBeautySamplesUITests;
+			packageProductDependencies = (
+			);
+			productName = SnapBeautySamplesUITests;
+			productReference = 7895B3A1889A755549A09957 /* SnapBeautySamplesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		42D69859CCE09DC7529C03C9 /* SnapBeautySamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 149571A3A1D70D1E62D350F8 /* Build configuration list for PBXNativeTarget "SnapBeautySamples" */;
+			buildPhases = (
+				993AFA450EF6EA6EB80DDB43 /* Sources */,
+				4696EC38BF28FA92F6CE313E /* Resources */,
+				E0C1C63B3B8E0D55B7BF38EC /* Frameworks */,
+				CBD255486567BB49C51B9755 /* Embed Frameworks */,
+
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapBeautySamples;
+			packageProductDependencies = (
+				AA0000000000000000000002,
+			);
+			productName = SnapBeautySamples;
+			productReference = BE85A97481F9D20D8F457400 /* SnapBeautySamples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CB019BE1A459DFE9A5E910A /* SnapBeautySamplesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F32B82D64C0FAF107E858D4 /* Build configuration list for PBXNativeTarget "SnapBeautySamplesTests" */;
+			buildPhases = (
+				612D2C74B91A74BADF050E21 /* Sources */,
+				E96CFD8342AC184FF407BCE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C15CA84522115B9FDB905383 /* PBXTargetDependency */,
+			);
+			name = SnapBeautySamplesTests;
+			packageProductDependencies = (
+			);
+			productName = SnapBeautySamplesTests;
+			productReference = 74377E0B3218FE50D3475534 /* SnapBeautySamplesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE04D0BF79C2DB7784E66483 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0B52C723CB2F6AF94EDE925F = {
+						TestTargetID = 42D69859CCE09DC7529C03C9;
+					};
+				};
+			};
+			buildConfigurationList = C184BCD5B1758B0D1497719C /* Build configuration list for PBXProject "SnapBeautySamples" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A355C72CD6A4C339DE23952E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			packageReferences = (AA0000000000000000000003,);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42D69859CCE09DC7529C03C9 /* SnapBeautySamples */,
+				5CB019BE1A459DFE9A5E910A /* SnapBeautySamplesTests */,
+				0B52C723CB2F6AF94EDE925F /* SnapBeautySamplesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4696EC38BF28FA92F6CE313E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F67EA7BB5BFD3879A68ABFC3 /* Assets in Resources */,
+				BC5685319E2EB0996A62EE3F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E96CFD8342AC184FF407BCE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6743D4EDAD0CA29E6F24C029 /* Verification in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		612D2C74B91A74BADF050E21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F818ED2D7F9045DD2F83CDC /* SampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		993AFA450EF6EA6EB80DDB43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E553C35EFCE0011352D71BA0 /* BeautyFrameProcessor.mm in Sources */,
+				FA6EBAE5C4474373463A2759 /* SnapBeautySamplesApp.swift in Sources */,
+				919AF9976194ECAC0AA156C9 /* Effects.swift in Sources */,
+				450F52477EF00F8DA45EAB73 /* SampleRTCSession.m in Sources */,
+				072DF20521AC026EC72E9566 /* SceneControls.swift in Sources */,
+				B5A4E72FC70008CD041D904E /* SceneSession.swift in Sources */,
+				9856F8D040D48F67AE3F21A9 /* VideoPipeline.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B89B8A08E9F8453E951DBB5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C594FB2F44A47BD1729ED691 /* NavigationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B52945156ED6A176C60B281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D69859CCE09DC7529C03C9 /* SnapBeautySamples */;
+			targetProxy = 52A25A2252B805AD9E95AD9B /* PBXContainerItemProxy */;
+		};
+		C15CA84522115B9FDB905383 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42D69859CCE09DC7529C03C9 /* SnapBeautySamples */;
+			targetProxy = A2EC4CB55B307C76ABC956BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		07E329C73B477410ABBA985E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SnapBeautySamples;
+			};
+			name = Debug;
+		};
+		17EB247992F9ED5ACF374AFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1C362AED416A1D7EDD2F262E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".local/SDK\"",
+					"\".local/vendors/AgoraRtcEngine_iOS\"",
+					"\".local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC\"",
+					"\".local/vendors/ZegoExpressEngine/release/Library\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.6;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-ffp-contract=off",
+					"-fno-fast-math",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridge/SnapBeautySamples-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		424D9EADDAB6E7C11C8BE402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SnapBeautySamples;
+			};
+			name = Release;
+		};
+		7FC8A3FA1BBFF80B0F95E385 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		87BB11E9215141BA690259EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapBeautySamples.app/SnapBeautySamples";
+			};
+			name = Release;
+		};
+		D1E059D1174CFFEDA24DE249 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".local/SDK\"",
+					"\".local/vendors/AgoraRtcEngine_iOS\"",
+					"\".local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC\"",
+					"\".local/vendors/ZegoExpressEngine/release/Library\"",
+				);
+				GENERATE_INFOPLIST_FILE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.6;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(inherited)",
+					"-ffp-contract=off",
+					"-fno-fast-math",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridge/SnapBeautySamples-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEE23EB56E2E0E86660234A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.snapbeauty.samples.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapBeautySamples.app/SnapBeautySamples";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		149571A3A1D70D1E62D350F8 /* Build configuration list for PBXNativeTarget "SnapBeautySamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1E059D1174CFFEDA24DE249 /* Debug */,
+				1C362AED416A1D7EDD2F262E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9F32B82D64C0FAF107E858D4 /* Build configuration list for PBXNativeTarget "SnapBeautySamplesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEE23EB56E2E0E86660234A0 /* Debug */,
+				87BB11E9215141BA690259EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF4F4FE09948B22AE6A61E8E /* Build configuration list for PBXNativeTarget "SnapBeautySamplesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07E329C73B477410ABBA985E /* Debug */,
+				424D9EADDAB6E7C11C8BE402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C184BCD5B1758B0D1497719C /* Build configuration list for PBXProject "SnapBeautySamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17EB247992F9ED5ACF374AFA /* Debug */,
+				7FC8A3FA1BBFF80B0F95E385 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE04D0BF79C2DB7784E66483 /* Project object */;
+}

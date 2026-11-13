@@ -1,0 +1,584 @@
+{
+  "schema": 1,
+  "authoring": "Independent equations and pigments; no reference artwork input",
+  "cheek_uv_centers": [
+    [
+      0.3751419931650162,
+      0.35208356380462646
+    ],
+    [
+      0.6247932016849518,
+      0.3489384055137634
+    ]
+  ],
+  "generator_sha256": "fd7825b017b74dd3c6684edbff9f230ba7c8709ae5d67bb496cc66b24a144f8c",
+  "styles": [
+    {
+      "key": "dawn",
+      "name": "晨曦",
+      "filter": "rose3",
+      "files": [
+        "makeup/blush/blush_01.webp",
+        "makeup/eyeshadow/eyeshadow_01.webp",
+        "makeup/eyebrow/eyebrow_01.webp",
+        "makeup/lip/lip_01.json"
+      ]
+    },
+    {
+      "key": "glow",
+      "name": "微光",
+      "filter": "cool4",
+      "files": [
+        "makeup/blush/blush_23.webp",
+        "makeup/eyeshadow/eyeshadow_21.webp",
+        "makeup/eyebrow/eyebrow_19.webp",
+        "makeup/lip/lip_21.json"
+      ]
+    },
+    {
+      "key": "dew",
+      "name": "朝露",
+      "filter": "fresh1",
+      "files": [
+        "makeup/blush/blush_22.webp",
+        "makeup/eyeshadow/eyeshadow_20.webp",
+        "makeup/eyebrow/eyebrow_18.webp",
+        "makeup/lip/lip_20.json"
+      ]
+    },
+    {
+      "key": "breeze",
+      "name": "清风",
+      "filter": "fresh3",
+      "files": [
+        "makeup/blush/blush_20.webp",
+        "makeup/eyeshadow/eyeshadow_18.webp",
+        "makeup/eyebrow/eyebrow_16.webp",
+        "makeup/lip/lip_18.json"
+      ]
+    },
+    {
+      "key": "dusk",
+      "name": "暮色",
+      "filter": "cool11",
+      "files": [
+        "makeup/blush/blush_14.webp",
+        "makeup/eyeshadow/eyeshadow_11.webp",
+        "makeup/eyebrow/eyebrow_11.webp",
+        "makeup/lip/lip_11.json"
+      ]
+    },
+    {
+      "key": "neon",
+      "name": "霓虹",
+      "filter": "bright4",
+      "files": [
+        "makeup/eyeshadow/eyeshadow_03.webp",
+        "makeup/eyebrow/eyebrow_03.webp",
+        "makeup/lip/lip_03.json"
+      ]
+    },
+    {
+      "key": "autumn",
+      "name": "秋烬",
+      "filter": "bright3",
+      "files": [
+        "makeup/blush/blush_13.webp",
+        "makeup/eyeshadow/eyeshadow_10.webp",
+        "makeup/eyebrow/eyebrow_10.webp",
+        "makeup/lip/lip_10.json"
+      ]
+    },
+    {
+      "key": "ripple",
+      "name": "涟漪",
+      "filter": "rose2",
+      "files": [
+        "makeup/blush/blush_15.webp",
+        "makeup/eyeshadow/eyeshadow_12.webp",
+        "makeup/eyebrow/eyebrow_12.webp",
+        "makeup/lip/lip_12.json"
+      ]
+    },
+    {
+      "key": "velvet",
+      "name": "丝绒",
+      "filter": "warm2",
+      "files": [
+        "makeup/blush/blush_16.webp",
+        "makeup/eyeshadow/eyeshadow_13.webp",
+        "makeup/eyebrow/eyebrow_13.webp",
+        "makeup/lip/lip_13.json"
+      ]
+    },
+    {
+      "key": "haze",
+      "name": "薄雾",
+      "filter": "rose8",
+      "files": [
+        "makeup/blush/blush_17.webp",
+        "makeup/eyeshadow/eyeshadow_14.webp",
+        "makeup/eyebrow/eyebrow_14.webp",
+        "makeup/lip/lip_14.json"
+      ]
+    },
+    {
+      "key": "ember",
+      "name": "余烬",
+      "filter": "fresh2",
+      "files": [
+        "makeup/blush/blush_18.webp",
+        "makeup/eyeshadow/eyeshadow_16.webp",
+        "makeup/eyebrow/eyebrow_10.webp",
+        "makeup/lip/lip_16.json"
+      ]
+    },
+    {
+      "key": "frost",
+      "name": "霜降",
+      "filter": "warm2",
+      "files": [
+        "makeup/blush/blush_19.webp",
+        "makeup/eyeshadow/eyeshadow_17.webp",
+        "makeup/eyebrow/eyebrow_12.webp",
+        "makeup/lip/lip_17.json"
+      ]
+    },
+    {
+      "key": "cloud",
+      "name": "云絮",
+      "filter": "fresh3",
+      "files": [
+        "makeup/blush/blush_21.webp",
+        "makeup/eyeshadow/eyeshadow_19.webp",
+        "makeup/eyebrow/eyebrow_17.webp",
+        "makeup/lip/lip_19.json"
+      ]
+    },
+    {
+      "key": "shade",
+      "name": "冷影",
+      "filter": "bright2",
+      "files": [
+        "makeup/blush/blush_23.webp",
+        "makeup/eyeshadow/eyeshadow_21.webp",
+        "makeup/eyebrow/eyebrow_19.webp",
+        "makeup/lip/lip_22.json"
+      ]
+    },
+    {
+      "key": "ink",
+      "name": "黑白",
+      "filter": "mono1",
+      "files": [
+        "makeup/eyeshadow/eyeshadow_15.webp",
+        "makeup/eyebrow/eyebrow_15.webp",
+        "makeup/lip/lip_15.json"
+      ]
+    }
+  ],
+  "files": {
+    "makeup/blush/blush_01.webp": {
+      "md5": "8cd28474f14a456088ac15da971d6df0",
+      "sha256": "f97310de81305df07535d6584422a9100799bef103b462eae14e63eb35c2a7f5",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "65fa58b58523797c6e6a1c1035ae5ec88865e5b263f83cc9f8041add44ad8dae"
+    },
+    "makeup/eyeshadow/eyeshadow_01.webp": {
+      "md5": "6f213d187f32b5a2a3c57d90ed5fe895",
+      "sha256": "6c851031324805142c0a4c16b547bd53ae1854a083c6144aa04142dea56ae74e",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "a86446e3b273786f3d19b4da328628586595e96e441445ea698c06c09bb8a276"
+    },
+    "makeup/eyebrow/eyebrow_01.webp": {
+      "md5": "8526bdcd3fb6709995a6a52545e84754",
+      "sha256": "cbe5a1c58d3282c3edd3f84ac178a5c5028b7a8440d4c629f34b0d71a1d3bef8",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "a989403c3197b82bfcaaf72a6ae189c178ca2404a9c8a6fbcea50cff98cf3945"
+    },
+    "makeup/lip/lip_01.json": {
+      "md5": "f4c728a88a6365e5a3ecbff8cc16d3ee",
+      "sha256": "8d135d3b28f9a4770c345f1efd1952ad74f7d2bdfc08b21dbb9910657579b235"
+    },
+    "makeup/blush/blush_23.webp": {
+      "md5": "7e3d73b00bb20a8ec7a7f2ed72f75a1c",
+      "sha256": "0b82629ce424f0b0672573b02f2de0a81ddd426e11f259252578fed8fd777741",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "c409299dca1f7bcca8c00ee0f54498fedc23e4152d60b55e328a38047abb184f"
+    },
+    "makeup/eyeshadow/eyeshadow_21.webp": {
+      "md5": "b5c0f20408a9c983635f6864967378f3",
+      "sha256": "ef9332f47e1b0fd13df00b6312b1f2ea05c509cfa56812cc0c9a3a743a4d00d1",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "96de9b23839aeb1f7b451c571f4ea7c87e9d7df2ece6bfc087b1e92587006bbe"
+    },
+    "makeup/eyebrow/eyebrow_19.webp": {
+      "md5": "19ac2a8dab99b439ec78a0a6c6ebdb0a",
+      "sha256": "5482ac8e5749ea30048914983eaa24c4ba3ed890d82ecbf5a12437c146bc992c",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "f5cb6a4c85efb59be28f7355dd8f95b25022de52cfb71149cdc991f25c2c84e7"
+    },
+    "makeup/lip/lip_21.json": {
+      "md5": "bf0d588cc22a46c960bac2b1307aa7a0",
+      "sha256": "02848e9e0a8758f0341da35c1d61ffe99c32c3627a80ff1536feedad93d87c1f"
+    },
+    "makeup/blush/blush_22.webp": {
+      "md5": "710cb774d266c76af43ebf29dac63d13",
+      "sha256": "39c6cb87e13f6733be3b45b9e549a7ae36c64487a23d61a53ddbba274084aceb",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "b1b86116651c1bde42b74d055eaf08d7b5c8005a341aba8da87b0c1e752c3ffe"
+    },
+    "makeup/eyeshadow/eyeshadow_20.webp": {
+      "md5": "1c9ce37d4227e37665c4aed09c9b78e3",
+      "sha256": "5135563d93e6b9bea7587f68ffab311d54758bd2f00446f311810d67ccc5e7e2",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "f9cb822600fe75a3ca5e5711898f7064262f4294777ebf23f8c566fd6c310e0d"
+    },
+    "makeup/eyebrow/eyebrow_18.webp": {
+      "md5": "23954fb24cf52145c0dd24c06c3839aa",
+      "sha256": "112217d1d08a8716e89a6c35dc2df8294e146ed21134b1c21fb2b9c182da0a82",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "bab56fec9bac85f423fb47eb9fb16ca7c7f7dd2918d4ea54e5a2913b5156a6d7"
+    },
+    "makeup/lip/lip_20.json": {
+      "md5": "c9fb0430697feb3acb84b122795ba679",
+      "sha256": "8f2bfe46c8689f722f5f11808891d1a3e62c9c4852e61c4e00428d867f664ce2"
+    },
+    "makeup/blush/blush_20.webp": {
+      "md5": "49e51d93c7952280b530bca1bd9ece3d",
+      "sha256": "6a9941f5ede585eeb241283d13453a37ef730fb820829ede386c22dfa4017e5a",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "0ce67e77c3623960b32bef62f18405e70cd0c058fd504e6b03dcdfde3a17f85f"
+    },
+    "makeup/eyeshadow/eyeshadow_18.webp": {
+      "md5": "5e5278e7975c3d517ed61565686f68ab",
+      "sha256": "a7a2c2982aa97248017182a902e4a6db5761756af9de1ce4b605d1842b783f95",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "6cbf3b67d81379d0e63737cf7414cbf8fb7520d22c86e1115521badfd21903fd"
+    },
+    "makeup/eyebrow/eyebrow_16.webp": {
+      "md5": "97ca759a34de0e36ecccb1ae041fd3ae",
+      "sha256": "dcaaddcaaf4b91b2795d4f62d9024904214177779f26ef7f9b1d376fbc07ba66",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "f8c21bfcbfe603255b75c1cc3b7fd875fe098589f4446130257530c48dbd3261"
+    },
+    "makeup/lip/lip_18.json": {
+      "md5": "8c1179e4ae5b8c4b83994d2f54c85937",
+      "sha256": "a2684c7c0df288409b77bec959543d7c5577e6e32a690dce5f7654b99fcf9990"
+    },
+    "makeup/blush/blush_14.webp": {
+      "md5": "ea3164d410527fcb586cfd8c8521c233",
+      "sha256": "40ff8c6596d57dd51e275bbe6c53e8cf7738530273e8e11efa8c1cd778f123a8",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "a076bc24140a194539c6fc7b518ff70cf532751a4b5a15d049c8a74b73031c87"
+    },
+    "makeup/eyeshadow/eyeshadow_11.webp": {
+      "md5": "b29c3749b4999e8aa4c2fd23de35b4ba",
+      "sha256": "dc02b77c2955848cba6d9b6a06e641cd83ccaebe2f63d848a270447c4b5fe835",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "f59af39d086448b0fee78f1cdf0df2db47c6d77dc47208d955d996789a676008"
+    },
+    "makeup/eyebrow/eyebrow_11.webp": {
+      "md5": "5be34e2fa08ef53aa3ab24eaeda818e4",
+      "sha256": "db6108b87d92655f731c157d29be284d20db8a13835c0f1ef7ea8071fe71e81f",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "ea6b18e4b27a1f46f417d92361dbe25f76f2ce553438318680da17c853784532"
+    },
+    "makeup/lip/lip_11.json": {
+      "md5": "84af1b60845cb47aa7f90e50a0d2e0d3",
+      "sha256": "c21fea33733c6bf68a6660e47aa44bfc79293428db64c0c3220f8ce9b3b1917d"
+    },
+    "makeup/eyeshadow/eyeshadow_03.webp": {
+      "md5": "79d1760cb835ed2888d758e500a7701e",
+      "sha256": "8e9b338fe72c62edc49acebcef1eef2ea512f719342714a615fee86614949039",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "b9be73c503aa8185909de705ee738f8b2dc922bdb5fcbf64d9ee0d17f1e8b312"
+    },
+    "makeup/eyebrow/eyebrow_03.webp": {
+      "md5": "a8530fb95ce5e097f42c03368367e58a",
+      "sha256": "4ad5c7959aa84e10714f518c9f1a1d3ddc5c9ea2bc9f70a135039d95a8d866fc",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "8c44afa650a1217cf2b51a294a00c25c8f0f5211906cf5219bbcd5f4484afedd"
+    },
+    "makeup/lip/lip_03.json": {
+      "md5": "1ff8ee70632eb719cbfc3652a7b1164a",
+      "sha256": "7b7b9460bc96d90edb0118266eb89a95020b278fd92266b2a8ed1f2b10ec0e02"
+    },
+    "makeup/blush/blush_13.webp": {
+      "md5": "48428d1d1fb52c36383c66867d823fd5",
+      "sha256": "1e3261a3c2173ca9d8bf14a1760ac93b2dd45ff99da24afa5e8a322e309c2362",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "c52ecd5f25154b84b8cd169fa1e281fef046269ae0da370b1a43c6a64e089ced"
+    },
+    "makeup/eyeshadow/eyeshadow_10.webp": {
+      "md5": "77fdb9e713e9077657a5b1ad95b2b712",
+      "sha256": "9112d25df294e8573cc1fe1bc143afd8f5827409de6574b861574bec2de52250",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "4cace112947183b8cc6c14afee22b853bcd0bcf2b4c6dbdd961808c2cd1404e3"
+    },
+    "makeup/eyebrow/eyebrow_10.webp": {
+      "md5": "383a01c9985f8768467219cbac96a8e6",
+      "sha256": "c4d1f0c798c6bfb300930fe76d514f6f9d945ead7e068138421f08d6e3e6b88d",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "30267beb8b49422de5775c631ade5cd24312dbba2ca0a6a1edcb693ae42e3730"
+    },
+    "makeup/lip/lip_10.json": {
+      "md5": "71ad43231b088e417b865fee7c415965",
+      "sha256": "a65029a257b62cfa2684f06054995fac1f7800253065882c4584fb6e1959a5c9"
+    },
+    "makeup/blush/blush_15.webp": {
+      "md5": "a28900775afadd4c1654373e53512c0d",
+      "sha256": "11169d3622b091307b8df0fea06ab92452b498774358b2ac18fc9479e96234c1",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "82ed838b3ab863e3847ae3db7c93dbe805121dc4bdaebe3164d353d1694e1a6d"
+    },
+    "makeup/eyeshadow/eyeshadow_12.webp": {
+      "md5": "30a1cebf4695df5c1847c3d41eadd8bc",
+      "sha256": "b4597bbdd993db63fe33dfc5c41ed29e81aa0e78b23922fb493b649842fab17a",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "5291b063cdca5b702c46b2747cd31bab219cf95b08c848254c6c7428acf635b8"
+    },
+    "makeup/eyebrow/eyebrow_12.webp": {
+      "md5": "2bd4ee1614c8db15188dda7ec1157d7d",
+      "sha256": "d6cbdc8af4d2af8d2ba246dfa4e2c06239847ddd4464b77cdf52f39782073ecc",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "7f339b1f20ca665febc34de9811d92dddfec8ce08425664df1483a5c4105e765"
+    },
+    "makeup/lip/lip_12.json": {
+      "md5": "9689b2c5f6c1d488511de6e32814f5d3",
+      "sha256": "8f7f2ffdfd61823a185ea193ef8d0eb44b4ff8266aa84721f99a765becdd6f9e"
+    },
+    "makeup/blush/blush_16.webp": {
+      "md5": "e054b4dd45a05926bc8f48f22d2fd8fb",
+      "sha256": "3dcd5acff98d9b724df2e23e520b2887be3b6147cd160d3918e7602219de3574",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "45d222d90fa5669cb27ff30d960bd53dae4c051a12834c7596fb769f08deec59"
+    },
+    "makeup/eyeshadow/eyeshadow_13.webp": {
+      "md5": "b3c0215b0f0b02f509eb525124ed8865",
+      "sha256": "e8f946c463a0c6dc324950a91a836f8fe15829587892e051fcbafcbce87994e4",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "ea8ef9bdd3d2483c4ee7ad8f89370c38f114ea76f0b323a431eb439bdd7dac64"
+    },
+    "makeup/eyebrow/eyebrow_13.webp": {
+      "md5": "c3856dd6422a57215f41a99b3c17a865",
+      "sha256": "258b846aa2ee91ba6a8c0c97c36cd1803f7bcd5334956d16f2450ee08c454385",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "760b3e17e0335f61b13f31d5e21902f67b62d1b8b0a14d68eb59026551cf0daf"
+    },
+    "makeup/lip/lip_13.json": {
+      "md5": "21ce968ae296546916c66de86b8dc86c",
+      "sha256": "ffba75864edeffe00f1e32401f5e5d79ddcc1be223277026a4d06baf8f6fed5b"
+    },
+    "makeup/blush/blush_17.webp": {
+      "md5": "a15741346989dcd74102f0128f88dbfb",
+      "sha256": "7cac1dcefa4e2c18c1b3e556f7b0c4d9b39f66559c30b37e1a4e076f5ab87d5b",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "6184a125f4aec853a7f687b20c3bbf404dc555f766cc3f9228112bf284d279d9"
+    },
+    "makeup/eyeshadow/eyeshadow_14.webp": {
+      "md5": "40e24175248f03189b2fb1d3638b0472",
+      "sha256": "41f778860da434b4b738a2a10f3c634cc9f3c298de47a5d7acd8451c8eb65064",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "968f42329901ac150776bae63fb6498b9b4677092fdad6cb01fdeaa4bd74b411"
+    },
+    "makeup/eyebrow/eyebrow_14.webp": {
+      "md5": "7fc90f559af974087d33158b8e08b960",
+      "sha256": "546cef4cf641123fb39cc7eb62793c7ee92efbf723b889155d68746dbd7c2f1f",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "5ba3c0fca9a783ab293fd44c9b92435998677512ffaae22fbe58920f908a9ba2"
+    },
+    "makeup/lip/lip_14.json": {
+      "md5": "59abc0953fe3cb6284e59d8e7aa7592c",
+      "sha256": "47e2ce9b927ea0a16cc6046e4d8aea944e585d870eb0b9393dfada5ede08451e"
+    },
+    "makeup/blush/blush_18.webp": {
+      "md5": "a096a34cdde8aa8895f2464b60ce629e",
+      "sha256": "a436549f7720059d776f858c997fad1f57f5553a0828950d4483ec16575b78d5",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "b9ce11ccdf177940a62b553ae9ac58f9c37b0d79b8e780d14d3ea00490dd7ab8"
+    },
+    "makeup/eyeshadow/eyeshadow_16.webp": {
+      "md5": "60c5016356c2e3bf364ae8a0b3fcef73",
+      "sha256": "0e05e25bef853364f4af11d0d7388a0664182a50eea58201dab2a57967b28597",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "a78fa41334f3e3e0a548dec3fbfd708db2d95e8a68220f14fec8e93636d5f9b4"
+    },
+    "makeup/lip/lip_16.json": {
+      "md5": "d5a5f94464cf3452518ff0c347eff664",
+      "sha256": "7c105fddc904db610746fcbaa8880300e15d72de658f0104010a9ffb18082b8c"
+    },
+    "makeup/blush/blush_19.webp": {
+      "md5": "72b1a19fb6da3a8818f6cf4424295e50",
+      "sha256": "759923dea25118b7e203e36a0125d0268cff55d00a55edda9ab2954984e506f5",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "36fd4b4bf42c5f47a72c1225288853edb72b5c9082ec12e3b8e177f70b2c6035"
+    },
+    "makeup/eyeshadow/eyeshadow_17.webp": {
+      "md5": "a2b071c9b6f788f4b054adf7a4df8e07",
+      "sha256": "416b30df990ef9fa6023340fcd65997ce0b0fb9abd04d22073e85d67ba04bbae",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "756f9f9caf6b036dc3a38bf4a2ecc8f2880a1acfd72a3a072186b7ad7de342b3"
+    },
+    "makeup/lip/lip_17.json": {
+      "md5": "263a75eb906d56c4326cfbd62902bfc5",
+      "sha256": "019cc3ba06f2b875707782fb3d8776425ba7019b3bf54cea82702730a11171e4"
+    },
+    "makeup/blush/blush_21.webp": {
+      "md5": "50fbd59b22bf06e16a565cfd4215e60b",
+      "sha256": "2caf89779fbf8061b1808bb771a0aad5a909c00c17e66073b1273c6b933bc4fa",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "0ec48a2deb3808b15b512945e952304ff17fc3ce3485777c03aa744ace848d80"
+    },
+    "makeup/eyeshadow/eyeshadow_19.webp": {
+      "md5": "9ec461748df291fc9dd68e790d2ca7dc",
+      "sha256": "c198d57149d3485e3216db63a78561b8db82f8fbe608ca29c451a5cdbc375a0a",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "4551e0f67a5a396ac93a18c50c5f811c0f46413c5bbfe5e96b5ff1774e6569da"
+    },
+    "makeup/eyebrow/eyebrow_17.webp": {
+      "md5": "c357c916c2185bd876f36f30043d443a",
+      "sha256": "d5ceb46dd062c196c47fd21c69f79edc9fbecd428e11ace880d09939f7855cb1",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "dbf448510204ee35afba2ec5c35e6aa64f6e50774c658d55f922e07007e41678"
+    },
+    "makeup/lip/lip_19.json": {
+      "md5": "f312306d293b7156fc54b326f261a7b9",
+      "sha256": "f4d65a440ef188758679bb8bafe313397d96e427a6c6a3e60b5eb8d7c7c28a47"
+    },
+    "makeup/lip/lip_22.json": {
+      "md5": "0f27ca55f3f1d6bf46c92c0e3c040be4",
+      "sha256": "d751fd48bd47f495dd642dc07c151d0ff136a5b29d947b6d2e8caa47ed1253b6"
+    },
+    "makeup/eyeshadow/eyeshadow_15.webp": {
+      "md5": "aafb119ba4abeba2de7b89c332f57184",
+      "sha256": "b601105b35caaa3a9ba8a035a6716bb18b45601dd97b9083da9a19d61678b41e",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "a5495c8797d8d49cb32869c5cf797ae4013b4e7df80e8c9cfdbaebcd3f019c52"
+    },
+    "makeup/eyebrow/eyebrow_15.webp": {
+      "md5": "b04fab51256c9b6d4c56ba1de0f55a46",
+      "sha256": "886d56271ce3dd908de09dc53cb805a463423019e2c30b7e0c40e27a27fed9bf",
+      "size": [
+        512,
+        512
+      ],
+      "rgba_sha256": "85a990dc14cf65d9a0a56db7ca91104e251f26a2bb6c1ecd115ac32cc0d6918e"
+    },
+    "makeup/lip/lip_15.json": {
+      "md5": "39ad6335ea07403c26ea28602672574c",
+      "sha256": "15c808c251904082f1cbf2c4b3e8071a8c92750d5fce75b6bb367707f4f1aa7a"
+    }
+  }
+}

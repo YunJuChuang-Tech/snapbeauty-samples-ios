@@ -1,0 +1,223 @@
+{
+  "name": "SnapBeautySamples",
+  "options": {
+    "deploymentTarget": {
+      "iOS": "15.0"
+    }
+  },
+  "settings": {
+    "base": {
+      "SWIFT_VERSION": "5.0",
+      "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+      "IPHONEOS_DEPLOYMENT_TARGET": "15.0",
+      "ENABLE_BITCODE": "NO"
+    }
+  },
+  "targets": {
+    "SnapBeautySamples": {
+      "type": "application",
+      "platform": "iOS",
+      "sources": [
+        {
+          "path": "App"
+        },
+        {
+          "path": "Bridge"
+        },
+        {
+          "path": ".local/HostAssets/Assets",
+          "type": "folder",
+          "buildPhase": "resources"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "ai.snapbeauty.samples",
+          "INFOPLIST_FILE": "Info.plist",
+          "SWIFT_OBJC_BRIDGING_HEADER": "Bridge/SnapBeautySamples-Bridging-Header.h",
+          "HEADER_SEARCH_PATHS": [
+            "$(inherited)"
+          ],
+          "OTHER_CPLUSPLUSFLAGS": [
+            "$(inherited)",
+            "-ffp-contract=off",
+            "-fno-fast-math"
+          ],
+          "TARGETED_DEVICE_FAMILY": "1,2",
+          "MARKETING_VERSION": "0.1.6",
+          "CURRENT_PROJECT_VERSION": "8",
+          "GENERATE_INFOPLIST_FILE": "NO",
+          "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon"
+        }
+      },
+      "dependencies": [
+        {
+          "package": "SnapBeautySDK",
+          "product": "SnapBeautySDK"
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/AgoraRtcKit.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/AgoraSoundTouch.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/Agorafdkaac.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/Agoraffmpeg.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXFFmpeg.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXSoundTouch.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/ZegoExpressEngine/release/Library/ZegoExpressEngine.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/aosl.xcframework",
+          "embed": true
+        },
+        {
+          "framework": ".local/vendors/AgoraRtcEngine_iOS/video_dec.xcframework",
+          "embed": true
+        },
+        {
+          "sdk": "AVFoundation.framework"
+        },
+        {
+          "sdk": "Metal.framework"
+        },
+        {
+          "sdk": "CoreVideo.framework"
+        },
+        {
+          "sdk": "CoreMedia.framework"
+        },
+        {
+          "sdk": "CoreImage.framework"
+        },
+        {
+          "sdk": "MetalKit.framework"
+        },
+        {
+          "sdk": "Accelerate.framework"
+        },
+        {
+          "sdk": "AudioToolbox.framework"
+        },
+        {
+          "sdk": "VideoToolbox.framework"
+        },
+        {
+          "sdk": "Network.framework"
+        },
+        {
+          "sdk": "SystemConfiguration.framework"
+        },
+        {
+          "sdk": "CoreTelephony.framework"
+        },
+        {
+          "sdk": "Photos.framework"
+        },
+        {
+          "sdk": "ReplayKit.framework"
+        },
+        {
+          "sdk": "libc++.tbd"
+        },
+        {
+          "sdk": "libz.tbd"
+        },
+        {
+          "sdk": "libsqlite3.tbd"
+        },
+        {
+          "sdk": "libresolv.tbd"
+        }
+      ]
+    },
+    "SnapBeautySamplesTests": {
+      "type": "bundle.unit-test",
+      "platform": "iOS",
+      "sources": [
+        "Tests",
+        {
+          "path": ".local/Verification",
+          "type": "folder",
+          "buildPhase": "resources"
+        }
+      ],
+      "dependencies": [
+        {
+          "target": "SnapBeautySamples"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "ai.snapbeauty.samples.tests",
+          "GENERATE_INFOPLIST_FILE": "YES"
+        }
+      }
+    },
+    "SnapBeautySamplesUITests": {
+      "type": "bundle.ui-testing",
+      "platform": "iOS",
+      "sources": [
+        "UITests"
+      ],
+      "dependencies": [
+        {
+          "target": "SnapBeautySamples"
+        }
+      ],
+      "settings": {
+        "base": {
+          "PRODUCT_BUNDLE_IDENTIFIER": "ai.snapbeauty.samples.uitests",
+          "GENERATE_INFOPLIST_FILE": "YES"
+        }
+      }
+    }
+  },
+  "schemes": {
+    "SnapBeautySamples": {
+      "build": {
+        "targets": {
+          "SnapBeautySamples": "all",
+          "SnapBeautySamplesTests": [
+            "test"
+          ],
+          "SnapBeautySamplesUITests": [
+            "test"
+          ]
+        }
+      },
+      "test": {
+        "targets": [
+          "SnapBeautySamplesTests",
+          "SnapBeautySamplesUITests"
+        ]
+      }
+    }
+  },
+  "packages": {
+    "SnapBeautySDK": {
+      "url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git",
+      "exactVersion": "1.3.0"
+    }
+  }
+}

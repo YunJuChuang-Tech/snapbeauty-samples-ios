@@ -1,0 +1,34 @@
+[
+  {
+    "name": "TXLiteAVSDK_TRTC",
+    "version": "13.5.21355",
+    "spec": "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/0/4/2/TXLiteAVSDK_TRTC/13.5.21355/TXLiteAVSDK_TRTC.podspec.json",
+    "specSha256": "89b6982e89e2a4fd4b79fd98adac5270a781ddd19763d986eba6a33e3f84913b",
+    "url": "https://liteav.sdk.qcloud.com/download/releases/13.5/TXLiteAVSDK_TRTC_iOS_13.5.21355_SDK_en.zip",
+    "sha256": "86b52f8d8dae588faf54b09d68cf63c2d707c15cfd80282f53103eb80900561a"
+  },
+  {
+    "name": "AgoraRtcEngine_iOS",
+    "version": "4.6.4",
+    "spec": "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/1/d/9/AgoraRtcEngine_iOS/4.6.4/AgoraRtcEngine_iOS.podspec.json",
+    "specSha256": "ab147bc9ad759aa256c35d2142bd036eb81106fb054d3c585b6a1b14bf9f43a1",
+    "url": "https://download.agora.io/sdk/release/AgoraRtcEngine_iOS-4.6.4.zip",
+    "sha256": "df7fdd6f520c8d03de1c12c6c5979fca4e65642f3732155bba23a5ea0ec50dd5"
+  },
+  {
+    "name": "AgoraInfra_iOS",
+    "version": "1.3.5",
+    "spec": "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/f/2/3/AgoraInfra_iOS/1.3.5/AgoraInfra_iOS.podspec.json",
+    "specSha256": "b0b63f8dd110edbc07a51fe3856a933e52810afe8336bb1971491aa68a656612",
+    "url": "https://download.agora.io/sdk/release/AgoraInfra_iOS-1.3.5.zip",
+    "sha256": "cc90523f5b0d7ecafa8cb69fb962949f7cd10b130b1f70515ae6366dfbed4ca1"
+  },
+  {
+    "name": "ZegoExpressEngine",
+    "version": "3.25.0",
+    "spec": "https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/d/5/9/ZegoExpressEngine/3.25.0/ZegoExpressEngine.podspec.json",
+    "specSha256": "608f2a5ddd1859d14ab35acd25365d6a1322255fc4d63b66eee597d4d6202953",
+    "url": "https://artifact-node.zego.cloud/generic/rtc/public/native/ZegoExpressVideo/ios/ZegoExpressVideo-ios-shared-objc.zip?version=3.25.0.50976",
+    "sha256": "41356359790ab44d80e442bf60c6c39c4d7e318fd208315c550f81be9ef380a8"
+  }
+]
