@@ -18,7 +18,7 @@
 | AgoraInfra_iOS | 1.3.5 |
 | ZegoExpressEngine / Video | 3.25.0 |
 
-SnapBeauty 使用 Swift Package Manager 从 `https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git` 固定解析 `1.3.0`。项目依赖 `SnapBeautySDK` 产品，SDK 二进制、模型和平台 Metal 资源由 SPM 提供；示例自有妆容在运行时与 SDK 资源合并。
+SnapBeauty 使用 Swift Package Manager 从 `https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git` 固定解析 `1.3.1`。项目依赖 `SnapBeautySDK` 产品，SDK 二进制、模型和平台 Metal 资源由 SPM 提供；示例自有妆容在运行时与 SDK 资源合并。
 
 ```sh
 cd ios
@@ -57,7 +57,7 @@ xcodebuild -project SnapBeautySamples.xcodeproj -scheme SnapBeautySamples \
 
 每例显示一个远端画面。退出回到本地预览；离开页面或切后台会停止采集并退出房间，回前台只恢复本地预览。旧帧、权限回调与会话回调带有代次检查，防止离开后或重新进入时影响新页面。
 
-SDK 1.3.0 提供多脸、帧预算与重置接口；本轮示例保留单人处理方式。“人脸设置”显示当前示例范围；重置跟踪时重新创建引擎。返回纹理按实际 `pixelFormat` 转换为独立 BGRA buffer，兼容发布包可能返回的 RGBA。当前实现仍有 GPU 读回与 CPU 拷贝成本，长时功耗及真实网络推流尚未验证。
+SDK 1.3.1 提供多脸、帧预算与重置接口；本轮示例保留单人处理方式。“人脸设置”显示当前示例范围；重置跟踪时重新创建引擎。返回纹理按实际 `pixelFormat` 转换为独立 BGRA buffer，兼容发布包可能返回的 RGBA。当前实现仍有 GPU 读回与 CPU 拷贝成本，长时功耗及真实网络推流尚未验证。
 
 ## 原创素材
 
