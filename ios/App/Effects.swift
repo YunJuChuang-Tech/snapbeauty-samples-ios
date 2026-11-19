@@ -45,7 +45,10 @@ enum Effects {
     static func filters(at assets: URL) -> [EffectChoice] {
         let families = ["bright": "明亮", "rose": "玫瑰", "stylized": "个性", "mono": "黑白", "cool": "冷调",
                         "peach": "蜜桃", "warm": "暖调", "fresh": "清新", "muted": "柔灰", "natural": "自然"]
-        let files = (try? FileManager.default.contentsOfDirectory(at: assets.appendingPathComponent("snapbeauty/luts"), includingPropertiesForKeys: nil)) ?? []
+        // SDK built-in LUTs plus the CC BY-SA host filters this app registers itself (host-filters/luts).
+        let files = ["snapbeauty/luts", "host-filters/luts"].flatMap {
+            (try? FileManager.default.contentsOfDirectory(at: assets.appendingPathComponent($0), includingPropertiesForKeys: nil)) ?? []
+        }
         return [.init(key: "", name: "原色")] + files.filter { $0.pathExtension == "png" }.sorted { $0.lastPathComponent < $1.lastPathComponent }.map {
             let key = $0.deletingPathExtension().lastPathComponent
             let prefix = String(key.prefix { !$0.isNumber })

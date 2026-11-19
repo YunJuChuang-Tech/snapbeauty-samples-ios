@@ -204,7 +204,7 @@ enum SampleSPMResources {
         let fm = FileManager.default
         let target = fm.temporaryDirectory.appendingPathComponent("snapbeauty-sample-" + UUID().uuidString, isDirectory: true)
         try fm.copyItem(at: SnapBeautyResources.assets, to: target)
-        for folder in ["makeup", "sample_makeup"] {
+        for folder in ["makeup", "sample_makeup", "host-filters"] {
             let source = Bundle.main.bundleURL.appendingPathComponent("Assets/" + folder, isDirectory: true)
             try fm.copyItem(at: source, to: target.appendingPathComponent(folder, isDirectory: true))
         }

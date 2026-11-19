@@ -75,7 +75,8 @@ def host_assets():
         source = Path(temporary) / "HostAssets"
         assets = source / "Assets"
         assets.mkdir(parents=True)
-        for folder in ["makeup", "sample_makeup"]:
+        # host-filters: CC BY-SA LUTs registered at runtime (registerFilter); attribution ships in the same folder.
+        for folder in ["makeup", "sample_makeup", "host-filters"]:
             shutil.copytree(host_assets / folder, assets / folder)
         license_file = LOCAL / "snapbeauty.license"
         if not license_file.is_file():
@@ -101,7 +102,7 @@ def project():
         deps.append({"sdk": framework + ".framework"})
     for library in ["libc++.tbd", "libz.tbd", "libsqlite3.tbd", "libresolv.tbd"]:
         deps.append({"sdk": library})
-    spec = {"name": "SnapBeautySamples", "packages": {"SnapBeautySDK": {"url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git", "exactVersion": "1.3.1"}}, "options": {"deploymentTarget": {"iOS": "15.0"}},
+    spec = {"name": "SnapBeautySamples", "packages": {"SnapBeautySDK": {"url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git", "exactVersion": "1.3.2"}}, "options": {"deploymentTarget": {"iOS": "15.0"}},
         "settings": {"base": {"SWIFT_VERSION": "5.0", "CLANG_CXX_LANGUAGE_STANDARD": "c++17", "IPHONEOS_DEPLOYMENT_TARGET": "15.0", "ENABLE_BITCODE": "NO"}},
         "targets": {"SnapBeautySamples": {"type": "application", "platform": "iOS",
             "sources": [{"path": "App"}, {"path": "Bridge"}, {"path": ".local/HostAssets/Assets", "type": "folder", "buildPhase": "resources"}],

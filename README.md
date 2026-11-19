@@ -7,7 +7,7 @@
 
 ## 快速开始
 
-需要 macOS、Xcode、iOS 15.0 或更新版本的设备，以及与应用绑定的有效 SDK 授权。SnapBeauty 通过 Swift Package Manager 固定版本 1.3.1；RTC 依赖由准备脚本从各厂商官方渠道获取并校验。
+需要 macOS、Xcode、iOS 15.0 或更新版本的设备，以及与应用绑定的有效 SDK 授权。SnapBeauty 通过 Swift Package Manager 固定版本 1.3.2；RTC 依赖由准备脚本从各厂商官方渠道获取并校验。
 
 ```sh
 cd ios
@@ -28,3 +28,11 @@ open SnapBeautySamples.xcodeproj
 ## 许可证
 
 示例代码及自有素材采用 [Apache License 2.0](LICENSE)。SnapBeauty SDK 和第三方 RTC SDK 独立授权，须遵循各自的使用及分发条款。
+
+### 滤镜 LUT
+
+`ios/HostAssetsSource/host-filters/luts/` 中的 10 张滤镜（`bright3`、`rose3`、`stylized11`、`mono1`、`warm1`、`warm2`、`fresh1`、`muted5`、`natural2`、`natural4`）不属于 SnapBeauty SDK，由本示例随 App 一起打包，在创建引擎后用 SDK 的 `registerFilter` 注册，之后和 SDK 内置滤镜一样用 `setFilter` 选择。
+
+- 素材来源：RawTherapee Film Simulation Collection 2015-09-20（https://rawtherapee.com/shared/HaldCLUT.zip ），作者 **Pat David、Pavlov Dmitry、Michael Ezra**。
+- 改动：重采样为 64³，用强度、提亮、冷暖、色调、饱和度、对比度六个全局参数调整，再三线性采样为 16³ 并量化为 RGB8（256×16）。
+- 基于本示例发布 App 时，如保留这些滤镜，须一并保留上述署名与许可文件；不需要时删除该目录即可，其余功能不受影响。

@@ -12,12 +12,22 @@
     int64_t _timestamp;
 }
 + (NSString *)sdkVersion { return [SnapBeautyEngine version]; }
+// Registers the CC BY-SA host filters (Assets/host-filters/luts/*.png) shipped with this app; see host-filters/NOTICE.md.
++ (BOOL)registerHostFilters:(SnapBeautyEngine *)engine assets:(NSString *)assets error:(NSError **)error {
+    NSString *folder = [assets stringByAppendingPathComponent:@"host-filters/luts"];
+    for (NSString *name in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folder error:nil]) {
+        if (![name.pathExtension isEqualToString:@"png"]) continue;
+        NSData *png = [NSData dataWithContentsOfFile:[folder stringByAppendingPathComponent:name]];
+        if (!png || ![engine registerFilter:name.stringByDeletingPathExtension png:png error:error]) return NO;
+    }
+    return YES;
+}
 + (BOOL)licenseUsable { return [SnapBeauty licenseStatus].usable; }
 - (instancetype)initWithAssets:(NSString *)assets shaders:(NSString *)shaders error:(NSError **)error {
     if ((self = [super init])) {
         _assets = [assets copy]; _shaders = [shaders copy];
         _engine = [[SnapBeautyEngine alloc] initWithAssetsPath:_assets shadersPath:_shaders error:error];
-        if (!_engine) return nil;
+        if (!_engine || ![BeautyFrameProcessor registerHostFilters:_engine assets:_assets error:error]) { _engine = nil; return nil; }
     }
     return self;
 }
@@ -31,7 +41,7 @@
     }
     if (!_engine) {
         _engine = [[SnapBeautyEngine alloc] initWithAssetsPath:_assets shadersPath:_shaders error:error];
-        if (!_engine) return nil;
+        if (!_engine || ![BeautyFrameProcessor registerHostFilters:_engine assets:_assets error:error]) { _engine = nil; return nil; }
     }
     const double start = CACurrentMediaTime();
     SnapBeautySkinParams *skin = [SnapBeautySkinParams new];
