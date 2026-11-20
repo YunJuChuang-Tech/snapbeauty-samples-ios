@@ -61,7 +61,7 @@ struct EffectSnapshot: Equatable {
     var values: [Float] = {
         var values = [Float](repeating: 0, count: 40)
         for parameter in Effects.skin + Effects.shape { values[parameter.index] = parameter.neutral }
-        values[0] = 0.35; values[1] = 0.2; values[2] = 0.1; values[36] = 0.4; values[37] = 0.4
+        values[0] = 0.6; values[1] = 0.5; values[2] = 0.1; values[36] = 0.6; values[37] = 0.6
         return values
     }()
     var style = Effects.styles.dropFirst().first?.key ?? ""

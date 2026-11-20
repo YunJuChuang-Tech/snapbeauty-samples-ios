@@ -74,7 +74,7 @@ final class SampleTests: XCTestCase {
         XCTAssertEqual(Set((Effects.skin + Effects.shape).map(\.index)), Set(0..<36))
         let snapshot = EffectSnapshot()
         XCTAssertEqual(snapshot.sdkValues.count, 40)
-        XCTAssertEqual(snapshot.sdkValues[0].floatValue, 2.1, accuracy: 0.0001)
+        XCTAssertEqual(snapshot.sdkValues[0].floatValue, 3.6, accuracy: 0.0001)
         XCTAssertEqual(snapshot.style, "dawn")
         XCTAssertFalse(snapshot.original)
         for item in Effects.shape where item.neutral == 0.5 { XCTAssertEqual(snapshot.values[item.index], 0.5) }
@@ -85,7 +85,7 @@ final class SampleTests: XCTestCase {
         effects.snapshot.values[0] = 0.8
         XCTAssertTrue(effects.adjusted(0)); XCTAssertEqual(effects.adjustedCount, 1)
         effects.restoreCurrent()
-        XCTAssertEqual(effects.snapshot.values[0], 0.35)
+        XCTAssertEqual(effects.snapshot.values[0], 0.6)
         XCTAssertFalse(effects.adjusted(0))
         effects.category = 1; effects.selectedShape = 12
         XCTAssertEqual(effects.displayValue(), "0")
