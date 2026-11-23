@@ -7,7 +7,7 @@
 
 ## 快速开始
 
-需要 macOS、Xcode、iOS 15.0 或更新版本的设备，以及与应用绑定的有效 SDK 授权。SnapBeauty 通过 Swift Package Manager 固定版本 1.3.2；RTC 依赖由准备脚本从各厂商官方渠道获取并校验。
+需要 macOS、Xcode、iOS 15.0 或更新版本的设备，以及与应用绑定的有效 SDK 授权。SnapBeauty 通过 Swift Package Manager 固定版本 1.3.5；RTC 依赖由准备脚本从各厂商官方渠道获取并校验。
 
 ```sh
 cd ios

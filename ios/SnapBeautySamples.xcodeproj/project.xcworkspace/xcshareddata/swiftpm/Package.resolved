@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git",
       "state" : {
-        "revision" : "16954bb860d4654fb66ecc49e9e5d99d533aa7c1",
-        "version" : "1.3.2"
+        "revision" : "42b419bf9776d82e081fb187d8fdeeabf2e42a9e",
+        "version" : "1.3.5"
       }
     }
   ],
