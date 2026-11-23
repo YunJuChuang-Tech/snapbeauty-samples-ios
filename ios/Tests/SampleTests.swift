@@ -73,11 +73,22 @@ final class SampleTests: XCTestCase {
         XCTAssertEqual(Effects.shape.count, 25)
         XCTAssertEqual(Set((Effects.skin + Effects.shape).map(\.index)), Set(0..<36))
         let snapshot = EffectSnapshot()
-        XCTAssertEqual(snapshot.sdkValues.count, 40)
+        XCTAssertEqual(snapshot.sdkValues.count, 45)
         XCTAssertEqual(snapshot.sdkValues[0].floatValue, 3.6, accuracy: 0.0001)
         XCTAssertEqual(snapshot.style, "dawn")
         XCTAssertFalse(snapshot.original)
         for item in Effects.shape where item.neutral == 0.5 { XCTAssertEqual(snapshot.values[item.index], 0.5) }
+    }
+
+    func testStandaloneLipstickState() {
+        var state = EffectSnapshot()
+        state.lipstick = "coral"; state.lipstickAmounts["coral"] = 0.3
+        XCTAssertEqual(state.sdkValues[40].floatValue, 0.611, accuracy: 0.0001)
+        XCTAssertEqual(state.sdkValues[44].floatValue, 0.3, accuracy: 0.0001)
+        state.lipstick = "vintage"; state.lipstickAmounts["vintage"] = 0.8
+        state.lipstick = "coral"; XCTAssertEqual(state.lipstickAmount, 0.3)
+        state.lipstick = ""; XCTAssertEqual(state.sdkValues[44].floatValue, 0)
+        XCTAssertEqual(state.style, EffectSnapshot().style)
     }
 
     func testAndroidControlSelectionRestoreAndSignedValues() {

@@ -179,7 +179,7 @@ struct EffectControls: View {
     @ObservedObject var effects: EffectsStore
     @State private var settingsPresented = false
     private var selectedID: String {
-        effects.category < 2 ? "parameter-\(effects.selectedIndex)" : effects.category == 2 ? "style-\(effects.snapshot.style)" : "filter-\(effects.snapshot.filter)"
+        effects.category < 2 ? "parameter-\(effects.selectedIndex)" : effects.category == 2 ? "style-\(effects.snapshot.style)" : effects.category == 3 ? "filter-\(effects.snapshot.filter)" : "lipstick-\(effects.snapshot.lipstick)"
     }
     private var hint: String {
         if effects.category == 2 {
@@ -190,6 +190,7 @@ struct EffectControls: View {
                 return "已搭配 \(name) · 浓度联动"
             }
         }
+        if effects.category == 4 { return effects.snapshot.lipstick.isEmpty ? "选择口红后可调强度" : "口红强度独立于妆容" }
         if effects.category == 3 && effects.snapshot.filterFollowsMakeup { return "随妆容浓度联动 · 手动调节后独立" }
         if effects.category == 3 && effects.snapshot.filter.isEmpty { return "选择滤镜后可调强度" }
         return effects.currentParameter?.neutral == 0.5 ? "左右滑动选项 · 0 为原始比例 · 已调 \(effects.adjustedCount) 项" : "左右滑动选项 · 描边为已调整 · 已调 \(effects.adjustedCount) 项"
@@ -197,7 +198,7 @@ struct EffectControls: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                ForEach(Array(["美肤", "美型", "妆容", "滤镜"].enumerated()), id: \.offset) { index, name in
+                ForEach(Array(["美肤", "美型", "妆容", "滤镜", "口红"].enumerated()), id: \.offset) { index, name in
                     Button { effects.category = index } label: {
                         Text(name).font(.system(size: 15, weight: effects.category == index ? .bold : .regular))
                             .foregroundColor(effects.category == index ? accent : .secondary).frame(maxWidth: .infinity).frame(height: 44)
@@ -211,6 +212,12 @@ struct EffectControls: View {
                             ForEach(effects.category == 0 ? Effects.skin : Effects.shape) { item in
                                 choice(item.name, id: "parameter-\(item.index)", selected: effects.selectedIndex == item.index, adjusted: effects.adjusted(item.index)) {
                                     if effects.category == 0 { effects.selectedSkin = item.index } else { effects.selectedShape = item.index }
+                                }
+                            }
+                        } else if effects.category == 4 {
+                            ForEach([EffectChoice(key: "", name: "无")] + Effects.lipsticks.map(\.choice)) { item in
+                                choice(item.name, id: "lipstick-" + item.key, selected: effects.snapshot.lipstick == item.key) {
+                                    effects.snapshot.lipstick = item.key
                                 }
                             }
                         } else {
@@ -235,7 +242,7 @@ struct EffectControls: View {
                     .accessibilityLabel("\(effects.currentTitle)恢复默认").accessibilityIdentifier("restore-current")
                 Text(effects.displayValue()).font(.system(size: 13, design: .monospaced)).foregroundColor(accent).frame(width: 36, alignment: .trailing).accessibilityIdentifier("effect-amount")
             }.frame(height: 40)
-            Slider(value: Binding(get: { Double(effects.snapshot.values[effects.selectedIndex]) }, set: { effects.snapshot.setAmount(effects.selectedIndex, Float($0)) }), in: 0...1, step: 0.01)
+            Slider(value: Binding(get: { Double(effects.category == 4 ? effects.snapshot.lipstickAmount : effects.snapshot.values[effects.selectedIndex]) }, set: { if effects.category == 4 { effects.snapshot.lipstickAmounts[effects.snapshot.lipstick] = Float($0) } else { effects.snapshot.setAmount(effects.selectedIndex, Float($0)) } }), in: 0...1, step: 0.01)
                 .accessibilityLabel("\(effects.currentTitle)强度").accessibilityIdentifier("effect-slider").disabled(!effects.amountEnabled).frame(height: 40)
             HStack(spacing: 6) {
                 Text(hint).font(.system(size: 10)).foregroundColor(.secondary).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)

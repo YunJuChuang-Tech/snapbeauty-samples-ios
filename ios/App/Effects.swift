@@ -17,6 +17,13 @@ struct EffectChoice: Identifiable, Equatable {
 }
 
 enum Effects {
+    static let lipsticks: [(choice: EffectChoice, rgba: [Float])] = [
+        (.init(key: "coral", name: "珊瑚色"), [0.611, 0.352, 0.352, 0.500]),
+        (.init(key: "grapefruit", name: "西柚色"), [0.752, 0.267, 0.231, 0.543]),
+        (.init(key: "rosewood", name: "豆沙粉"), [0.713, 0.374, 0.409, 0.517]),
+        (.init(key: "tangerine", name: "元气橘"), [0.786, 0.326, 0.252, 0.629]),
+        (.init(key: "vintage", name: "复古红"), [0.476, 0.018, 0.025, 0.777])
+    ]
     static let skin = [EffectParameter(index: 0, name: "磨皮"), .init(index: 1, name: "美白"), .init(index: 2, name: "红润"),
         .init(index: 28, name: "锐化"), .init(index: 29, name: "清晰"), .init(index: 30, name: "祛斑痘"),
         .init(index: 31, name: "亮眼"), .init(index: 32, name: "美牙"), .init(index: 33, name: "去黑眼圈"),
@@ -83,9 +90,14 @@ struct EffectSnapshot: Equatable {
         if index == 36 && filterFollowsMakeup { values[37] = clamped }
         if index == 37 { filterFollowsMakeup = false }
     }
+    var lipstick = ""
+    var lipstickAmounts: [String: Float] = [:]
+    var lipstickAmount: Float { lipstickAmounts[lipstick] ?? 0.6 }
     var original = false
     var sdkValues: [NSNumber] {
         var packed = values; packed[0] *= 6
+        let shade = Effects.lipsticks.first { $0.choice.key == lipstick }
+        packed += (shade?.rgba ?? [0, 0, 0, 0]) + [shade == nil ? 0 : lipstickAmount]
         return packed.map { NSNumber(value: $0) }
     }
 }
@@ -100,12 +112,12 @@ final class EffectsStore: ObservableObject {
     let resourceError: String?
     var selectedIndex: Int { category == 0 ? selectedSkin : category == 1 ? selectedShape : category == 2 ? 36 : 37 }
     var currentParameter: EffectParameter? { (Effects.skin + Effects.shape).first { $0.index == selectedIndex } }
-    var currentTitle: String { category == 2 ? "妆容浓度" : category == 3 ? "滤镜" : currentParameter?.name ?? "强度" }
-    var amountEnabled: Bool { category < 2 || (category == 2 ? !snapshot.style.isEmpty : !snapshot.filter.isEmpty) }
+    var currentTitle: String { category == 2 ? "妆容浓度" : category == 3 ? "滤镜" : category == 4 ? "口红" : currentParameter?.name ?? "强度" }
+    var amountEnabled: Bool { category < 2 || (category == 2 ? !snapshot.style.isEmpty : category == 3 ? !snapshot.filter.isEmpty : !snapshot.lipstick.isEmpty) }
     var adjustedCount: Int { (Effects.skin + Effects.shape).filter { adjusted($0.index) }.count }
     func adjusted(_ index: Int) -> Bool { abs(snapshot.values[index] - EffectSnapshot().values[index]) > 0.005 }
     func displayValue() -> String {
-        let number = Int((snapshot.values[selectedIndex] * 100).rounded())
+        let number = Int(((category == 4 ? snapshot.lipstickAmount : snapshot.values[selectedIndex]) * 100).rounded())
         if currentParameter?.neutral == 0.5 {
             let signed = number - 50
             return signed > 0 ? "+\(signed)" : "\(signed)"

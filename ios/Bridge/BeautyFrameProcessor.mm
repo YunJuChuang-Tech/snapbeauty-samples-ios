@@ -34,7 +34,7 @@
 - (NSInteger)faceCount { return _engine.faceCount; }
 - (double)costMilliseconds { return _cost; }
 - (CVPixelBufferRef)process:(CVPixelBufferRef)input values:(NSArray<NSNumber *> *)values style:(NSString *)style filter:(NSString *)filter maxFaces:(NSInteger)maxFaces error:(NSError **)error {
-    if (values.count != 40 || maxFaces != 1) {
+    if ((values.count != 40 && values.count != 45) || maxFaces != 1) {
         if (error) *error = [NSError errorWithDomain:@"ai.snapbeauty.samples.processing" code:1
             userInfo:@{NSLocalizedDescriptionKey: @"当前版本仅支持单人处理，且需要完整的效果参数。"}];
         return nil;
@@ -85,6 +85,7 @@
     _engine.skin = skin; _engine.face = face;
     [_engine setMakeup:style strength:values[36].floatValue];
     [_engine setFilter:filter strength:values[37].floatValue];
+    [_engine setLipstick:values.count == 45 && values[44].floatValue > 0 ? [values subarrayWithRange:NSMakeRange(40, 4)] : nil strength:values.count == 45 ? values[44].floatValue : 0];
     _timestamp = MAX(_timestamp + 1, (int64_t)(CACurrentMediaTime() * 1e9));
     id<MTLTexture> texture = [_engine processPixelBuffer:input frontCamera:NO timestamp:_timestamp showOriginal:NO error:error];
     if (!texture) return nil;
