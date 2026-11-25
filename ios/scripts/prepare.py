@@ -102,7 +102,7 @@ def project():
         deps.append({"sdk": framework + ".framework"})
     for library in ["libc++.tbd", "libz.tbd", "libsqlite3.tbd", "libresolv.tbd"]:
         deps.append({"sdk": library})
-    spec = {"name": "SnapBeautySamples", "packages": {"SnapBeautySDK": {"url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git", "exactVersion": "1.3.5"}}, "options": {"deploymentTarget": {"iOS": "15.0"}},
+    spec = {"name": "SnapBeautySamples", "packages": {"SnapBeautySDK": {"url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git", "exactVersion": "1.3.6"}}, "options": {"deploymentTarget": {"iOS": "15.0"}},
         "settings": {"base": {"SWIFT_VERSION": "5.0", "CLANG_CXX_LANGUAGE_STANDARD": "c++17", "IPHONEOS_DEPLOYMENT_TARGET": "15.0", "ENABLE_BITCODE": "NO"}},
         "targets": {"SnapBeautySamples": {"type": "application", "platform": "iOS",
             "sources": [{"path": "App"}, {"path": "Bridge"}, {"path": ".local/HostAssets/Assets", "type": "folder", "buildPhase": "resources"}],
