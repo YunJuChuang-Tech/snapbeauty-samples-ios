@@ -56,6 +56,7 @@
     skin.undereyeBags = values[33].floatValue;
     skin.smileLines = values[34].floatValue;
     skin.faceContour = values[35].floatValue;
+    skin.aegyoSal = values[38].floatValue;
     SnapBeautyFaceParams *face = [SnapBeautyFaceParams new];
     face.faceSlimming = values[3].floatValue;
     face.faceVTaper = values[4].floatValue;

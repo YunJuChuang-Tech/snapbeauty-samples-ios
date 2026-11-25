@@ -6,36 +6,62 @@ struct SceneView: View {
     @StateObject private var session: SceneSession
     @State private var roomPresented = false
     @State private var morePresented = false
+    @State private var panelCollapsed = false
     @State private var visible = false
     init(scene: SampleScene) { _session = StateObject(wrappedValue: SceneSession(scene: scene)) }
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 10) {
-                Button { dismiss() } label: { Text("‹").font(.system(size: 30)).frame(width: 28, height: 44) }
+            HStack(spacing: 8) {
+                Button { dismiss() } label: { Text("‹").font(.system(size: 26)).frame(width: 24, height: 34) }
                     .accessibilityLabel("返回场景列表").accessibilityIdentifier("scene-back")
-                SampleMark().stroke(accent, style: StrokeStyle(lineWidth: 2, lineCap: .round)).frame(width: 32, height: 36)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("SNAPBEAUTY").font(.system(size: 14, weight: .bold)).tracking(1.5)
-                    Text("SAMPLES  /  \(session.scene.name)").font(.system(size: 10)).foregroundColor(.secondary)
+                SampleMark().stroke(accent, style: StrokeStyle(lineWidth: 2, lineCap: .round)).frame(width: 24, height: 28)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("SNAPBEAUTY").font(.system(size: 12, weight: .bold)).tracking(1.3)
+                    Text("SAMPLES  /  \(session.scene.name)").font(.system(size: 9)).foregroundColor(.secondary)
                 }
                 Spacer()
-                Text(String(format: "%02d", session.scene.rawValue + 1)).font(.system(size: 12, design: .monospaced)).foregroundColor(accent)
-            }.padding(.horizontal, 16).padding(.vertical, 8).background(ink)
+                Text(String(format: "%02d", session.scene.rawValue + 1)).font(.system(size: 11, design: .monospaced)).foregroundColor(accent)
+            }.padding(.horizontal, 14).padding(.vertical, 5).background(ink)
             ZStack(alignment: .bottom) {
                 VideoPreview(session: session)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        guard session.scene != .trtc else { return }
+                        effects.snapshot.original = false
+                        withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.24)) { panelCollapsed.toggle() }
+                    }
                 VStack {
-                    HStack(alignment: .top) {
-                        Text("●  LIVE PREVIEW").font(.system(size: 10, weight: .bold)).tracking(1.2).foregroundColor(accent)
-                            .padding(12).background(ink.opacity(0.7)).cornerRadius(18)
-                        Spacer()
+                    HStack(spacing: 8) {
+                        HStack(spacing: 6) {
+                            Text(session.status).font(.system(size: 10)).lineLimit(1)
+                            if session.effectUnavailable {
+                                Button("重试美颜") { session.retryEffects() }.font(.system(size: 10, weight: .semibold))
+                                    .foregroundColor(accent).accessibilityIdentifier("retry-effects")
+                            }
+                        }.padding(.horizontal, 10).padding(.vertical, 6).background(ink.opacity(0.55)).cornerRadius(14)
+                        Spacer(minLength: 4)
+                        HStack(spacing: 2) {
+                            Button { effects.applyGenderPreset(false) } label: {
+                                Text("女生").font(.system(size: 11, weight: effects.malePreset ? .regular : .bold))
+                                    .foregroundColor(effects.malePreset ? .white : ink)
+                                    .padding(.horizontal, 10).padding(.vertical, 4)
+                                    .background(effects.malePreset ? Color.clear : accent).cornerRadius(12)
+                            }.accessibilityIdentifier("preset-female")
+                            Button { effects.applyGenderPreset(true) } label: {
+                                Text("男生").font(.system(size: 11, weight: effects.malePreset ? .bold : .regular))
+                                    .foregroundColor(effects.malePreset ? ink : .white)
+                                    .padding(.horizontal, 10).padding(.vertical, 4)
+                                    .background(effects.malePreset ? accent : Color.clear).cornerRadius(12)
+                            }.accessibilityIdentifier("preset-male")
+                        }.padding(3).background(ink.opacity(0.62)).cornerRadius(15)
                         Button { session.flip() } label: {
-                            VStack(spacing: 4) { ActionGlyph(kind: .flip).stroke(accent, lineWidth: 1.7).frame(width: 26, height: 26); Text("翻转").font(.system(size: 10)) }
-                                .frame(width: 62, height: 64).background(ink.opacity(0.7)).cornerRadius(22)
+                            Text("翻转").font(.system(size: 11)).padding(.horizontal, 11).padding(.vertical, 6)
+                                .background(ink.opacity(0.62)).cornerRadius(15)
                         }.accessibilityLabel("切换前后摄像头").disabled(!session.running)
                     }
                     HStack { Spacer(); if session.joined { RemotePreview(view: session.remoteView).frame(width: 108, height: 144).cornerRadius(16) } }
                     Spacer()
-                }.padding(16)
+                }.padding(.horizontal, 12).padding(.top, 10)
                 if session.cameraDenied || session.cameraUnavailable {
                     VStack(spacing: 14) {
                         Text(session.cameraDenied ? "让美好进入画面" : "暂时无法预览").font(.title2.bold())
@@ -44,21 +70,21 @@ struct SceneView: View {
                             if session.cameraDenied { if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) } }
                             else { session.start() }
                         }.padding(.horizontal, 24).padding(.vertical, 12).background(accent).foregroundColor(ink).cornerRadius(24)
-                    }.padding(28).background(ink.opacity(0.94)).cornerRadius(24).padding(.bottom, session.scene == .trtc ? 270 : 370)
+                    }.padding(28).background(ink.opacity(0.94)).cornerRadius(24).padding(.bottom, session.scene == .trtc ? 220 : 180)
                 }
                 VStack(spacing: 0) {
-                    HStack {
-                        Text(session.status).font(.system(size: 12))
-                        if session.effectUnavailable {
-                            Button("重试美颜") { session.retryEffects() }.font(.system(size: 12, weight: .semibold))
-                                .foregroundColor(accent).accessibilityIdentifier("retry-effects")
-                        }
-                    }.padding(.horizontal, 14).padding(.vertical, 9)
-                        .background(ink.opacity(0.75)).cornerRadius(18).padding(.bottom, 18)
                     if session.scene == .trtc { trtcControls }
                     else {
                         if session.scene != .camera { roomControls }
-                        EffectsPanel(effects: effects)
+                        HStack(spacing: 8) {
+                            Spacer()
+                            Button { effects.reset() } label: {
+                                Text("重置").font(.system(size: 11)).foregroundColor(.white)
+                                    .padding(.horizontal, 11).frame(height: 28).background(ink.opacity(0.62)).cornerRadius(14)
+                            }.accessibilityLabel("重置全部效果").accessibilityIdentifier("reset-effects")
+                            CompareControl(effects: effects).frame(width: 98, height: 28)
+                        }.padding(.horizontal, 12).padding(.bottom, 6)
+                        EffectsPanel(effects: effects, collapsed: $panelCollapsed)
                     }
                 }
             }.clipped()
@@ -126,33 +152,34 @@ private struct SceneButtonStyle: ButtonStyle {
 
 struct EffectsPanel: View {
     @ObservedObject var effects: EffectsStore
+    @Binding var collapsed: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var collapsed = false
     @State private var drag: CGFloat = 0
     @State private var dragging = false
     @State private var top: CGFloat = 0
-    private let contentHeight: CGFloat = 274
+    private let contentHeight: CGFloat = 108
     private var revealed: CGFloat { max(0, min(contentHeight, (collapsed ? 0 : contentHeight) - drag)) }
     var body: some View {
         VStack(spacing: 0) {
-            VStack(spacing: 5) {
-                Capsule().fill(Color(red: 0.40, green: 0.45, blue: 0.40)).frame(width: 30, height: 3)
-                Text(collapsed ? "展开效果面板  ↑" : "收起面板  ↓").font(.system(size: 11)).foregroundColor(accent)
-            }.frame(maxWidth: .infinity).frame(height: 48).contentShape(Rectangle())
+            HStack(spacing: 8) {
+                Capsule().fill(Color.white.opacity(0.45)).frame(width: 26, height: 3)
+                Text(collapsed ? "展开效果面板  ↑" : "收起面板  ↓").font(.system(size: 10)).foregroundColor(accent)
+            }.frame(maxWidth: .infinity).frame(height: 28).contentShape(Rectangle())
                 .onTapGesture { settle(!collapsed) }.accessibilityAddTraits(.isButton).accessibilityAction { settle(!collapsed) }
                 .accessibilityLabel("效果面板").accessibilityValue(collapsed ? "已收起" : "已展开").accessibilityIdentifier("effect-panel-handle")
-            EffectControls(effects: effects).padding(.bottom, 12).frame(height: contentHeight, alignment: .top)
+            EffectControls(effects: effects).padding(.bottom, 6).frame(height: contentHeight, alignment: .top)
                 .frame(height: revealed, alignment: .top).clipped().accessibilityHidden(collapsed && !dragging)
-        }.padding(.horizontal, 20)
+        }.padding(.horizontal, 14)
             .background(GeometryReader { geometry in Color.clear.preference(key: PanelTop.self, value: geometry.frame(in: .global).minY) })
             .onPreferenceChange(PanelTop.self) { top = $0 }
-            .background(panel).cornerRadius(24)
+            .background(LinearGradient(colors: [ink.opacity(0.54), ink.opacity(0.76)], startPoint: .top, endPoint: .bottom))
+            .cornerRadius(20)
             .simultaneousGesture(DragGesture(minimumDistance: 10, coordinateSpace: .global).onChanged { value in
                 // Horizontal option swipes and slider gestures retain their own interaction.
                 let dy = value.translation.height, dx = value.translation.width
                 guard dragging || abs(dy) > abs(dx) else { return }
                 let localStartY = value.startLocation.y - top
-                guard dragging || collapsed || !(180...220).contains(localStartY) else { return }
+                guard dragging || collapsed || !(26...64).contains(localStartY) else { return }
                 if !dragging {
                     guard (collapsed && dy < 0) || (!collapsed && dy > 0) else { return }
                     dragging = true; effects.snapshot.original = false
@@ -166,7 +193,7 @@ struct EffectsPanel: View {
     }
     private func settle(_ value: Bool) {
         effects.snapshot.original = false
-        withAnimation(reduceMotion ? nil : .timingCurve(0.2, 0, 0, 1, duration: 0.26)) { collapsed = value; drag = 0; dragging = false }
+        withAnimation(reduceMotion ? nil : .timingCurve(0.2, 0, 0, 1, duration: 0.24)) { collapsed = value; drag = 0; dragging = false }
     }
 }
 
@@ -181,33 +208,21 @@ struct EffectControls: View {
     private var selectedID: String {
         effects.category < 2 ? "parameter-\(effects.selectedIndex)" : effects.category == 2 ? "style-\(effects.snapshot.style)" : effects.category == 3 ? "filter-\(effects.snapshot.filter)" : "lipstick-\(effects.snapshot.lipstick)"
     }
-    private var hint: String {
-        if effects.category == 2 {
-            if let error = effects.resourceError { return error }
-            if effects.snapshot.style.isEmpty { return "选择一套妆容后可调浓度" }
-            if effects.snapshot.filterFollowsMakeup {
-                let name = effects.filters.first { $0.key == effects.snapshot.filter }?.name ?? "滤镜"
-                return "已搭配 \(name) · 浓度联动"
-            }
-        }
-        if effects.category == 4 { return effects.snapshot.lipstick.isEmpty ? "选择口红后可调强度" : "口红强度独立于妆容" }
-        if effects.category == 3 && effects.snapshot.filterFollowsMakeup { return "随妆容浓度联动 · 手动调节后独立" }
-        if effects.category == 3 && effects.snapshot.filter.isEmpty { return "选择滤镜后可调强度" }
-        return effects.currentParameter?.neutral == 0.5 ? "左右滑动选项 · 0 为原始比例 · 已调 \(effects.adjustedCount) 项" : "左右滑动选项 · 描边为已调整 · 已调 \(effects.adjustedCount) 项"
-    }
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                ForEach(Array(["美肤", "美型", "妆容", "滤镜", "口红"].enumerated()), id: \.offset) { index, name in
-                    Button { effects.category = index } label: {
-                        Text(name).font(.system(size: 15, weight: effects.category == index ? .bold : .regular))
-                            .foregroundColor(effects.category == index ? accent : .secondary).frame(maxWidth: .infinity).frame(height: 44)
-                    }.accessibilityIdentifier("effect-category-\(index)").accessibilityAddTraits(effects.category == index ? .isSelected : [])
+            HStack(spacing: 6) {
+                Text(effects.currentTitle).font(.system(size: 11)).lineLimit(1).accessibilityIdentifier("effect-current-name")
+                Slider(value: Binding(get: { Double(effects.category == 4 ? effects.snapshot.lipstickAmount : effects.snapshot.values[effects.selectedIndex]) }, set: { if effects.category == 4 { effects.snapshot.lipstickAmounts[effects.snapshot.lipstick] = Float($0) } else { effects.snapshot.setAmount(effects.selectedIndex, Float($0)) } }), in: 0...1, step: 0.01)
+                    .accessibilityLabel("\(effects.currentTitle)强度").accessibilityIdentifier("effect-slider").disabled(!effects.amountEnabled)
+                Text(effects.displayValue()).font(.system(size: 12, design: .monospaced)).foregroundColor(accent).frame(width: 30, alignment: .trailing).accessibilityIdentifier("effect-amount")
+                if effects.category < 2 && effects.adjusted(effects.selectedIndex) {
+                    Button("恢复默认") { effects.restoreCurrent() }.font(.system(size: 10)).foregroundColor(.secondary)
+                        .accessibilityLabel("\(effects.currentTitle)恢复默认").accessibilityIdentifier("restore-current")
                 }
-            }
+            }.frame(height: 32)
             ScrollViewReader { proxy in
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 6) {
+                    HStack(spacing: 5) {
                         if effects.category < 2 {
                             ForEach(effects.category == 0 ? Effects.skin : Effects.shape) { item in
                                 choice(item.name, id: "parameter-\(item.index)", selected: effects.selectedIndex == item.index, adjusted: effects.adjusted(item.index)) {
@@ -228,40 +243,31 @@ struct EffectControls: View {
                                 }
                             }
                         }
-                    }.padding(.horizontal, 3).frame(height: 48)
+                    }.padding(.horizontal, 2).frame(height: 34)
                 }.accessibilityIdentifier("effect-options")
                     .onChange(of: selectedID) { id in withAnimation(.easeOut(duration: 0.2)) { proxy.scrollTo(id, anchor: .center) } }
                     .onAppear { proxy.scrollTo(selectedID, anchor: .center) }
-            }.frame(height: 48)
-            HStack {
-                Text(effects.currentTitle).font(.system(size: 12)).accessibilityIdentifier("effect-current-name")
-                Spacer()
-                Button("恢复默认") { effects.restoreCurrent() }.font(.system(size: 11)).foregroundColor(.secondary)
-                    .opacity(effects.category < 2 && effects.adjusted(effects.selectedIndex) ? 1 : 0)
-                    .disabled(effects.category >= 2 || !effects.adjusted(effects.selectedIndex))
-                    .accessibilityLabel("\(effects.currentTitle)恢复默认").accessibilityIdentifier("restore-current")
-                Text(effects.displayValue()).font(.system(size: 13, design: .monospaced)).foregroundColor(accent).frame(width: 36, alignment: .trailing).accessibilityIdentifier("effect-amount")
-            }.frame(height: 40)
-            Slider(value: Binding(get: { Double(effects.category == 4 ? effects.snapshot.lipstickAmount : effects.snapshot.values[effects.selectedIndex]) }, set: { if effects.category == 4 { effects.snapshot.lipstickAmounts[effects.snapshot.lipstick] = Float($0) } else { effects.snapshot.setAmount(effects.selectedIndex, Float($0)) } }), in: 0...1, step: 0.01)
-                .accessibilityLabel("\(effects.currentTitle)强度").accessibilityIdentifier("effect-slider").disabled(!effects.amountEnabled).frame(height: 40)
-            HStack(spacing: 6) {
-                Text(hint).font(.system(size: 10)).foregroundColor(.secondary).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
-                Button("人脸设置") { settingsPresented = true }.font(.system(size: 10)).foregroundColor(accent).frame(width: 82, height: 32)
-                    .background(Color(red: 0.17, green: 0.20, blue: 0.18)).cornerRadius(16).accessibilityIdentifier("face-settings")
-            }.frame(height: 38)
-            HStack(spacing: 16) {
-                Button { effects.reset() } label: {
-                    VStack(spacing: 3) { ActionGlyph(kind: .reset).stroke(accent, lineWidth: 1.7).frame(width: 26, height: 26); Text("重置").font(.system(size: 10)) }.frame(width: 72, height: 52)
-                }.accessibilityLabel("重置全部效果").accessibilityIdentifier("reset-effects")
-                CompareControl(effects: effects).frame(maxWidth: .infinity).frame(height: 48)
-            }.frame(height: 52)
+            }.frame(height: 36)
+            HStack(spacing: 4) {
+                HStack(spacing: 0) {
+                    ForEach(Array(["美肤", "美型", "妆容", "滤镜", "口红"].enumerated()), id: \.offset) { index, name in
+                        Button { effects.category = index } label: {
+                            Text(name).font(.system(size: 13, weight: effects.category == index ? .bold : .regular))
+                                .foregroundColor(effects.category == index ? accent : .secondary).frame(maxWidth: .infinity).frame(height: 32)
+                        }.accessibilityIdentifier("effect-category-\(index)").accessibilityAddTraits(effects.category == index ? .isSelected : [])
+                    }
+                }
+                Button("人脸设置") { settingsPresented = true }.font(.system(size: 10)).foregroundColor(accent)
+                    .padding(.horizontal, 8).frame(height: 24).background(Color(red: 0.17, green: 0.20, blue: 0.18).opacity(0.65)).cornerRadius(12)
+                    .accessibilityIdentifier("face-settings")
+            }.frame(height: 34)
         }.sheet(isPresented: $settingsPresented) { FaceSettings(effects: effects) }
     }
     private func choice(_ name: String, id: String, selected: Bool, adjusted: Bool = false, action: @escaping () -> Void) -> some View {
         Button(action: action) {
-            Text(name).font(.system(size: 12)).lineLimit(1).fixedSize().padding(.horizontal, 14).frame(minWidth: 56).frame(height: 36)
-                .foregroundColor(selected ? ink : .white).background(selected ? accent : Color(red: 0.17, green: 0.20, blue: 0.18)).cornerRadius(18)
-                .overlay(RoundedRectangle(cornerRadius: 18).stroke(adjusted && !selected ? accent : .clear, lineWidth: 1))
+            Text(name).font(.system(size: 11)).lineLimit(1).fixedSize().padding(.horizontal, 11).frame(minWidth: 46).frame(height: 28)
+                .foregroundColor(selected ? ink : .white).background(selected ? accent : Color(red: 0.17, green: 0.20, blue: 0.18).opacity(0.55)).cornerRadius(14)
+                .overlay(RoundedRectangle(cornerRadius: 14).stroke(adjusted && !selected ? accent : .clear, lineWidth: 1))
         }.id(id).accessibilityIdentifier(id).accessibilityLabel(adjusted ? "\(name)，已调整" : name)
             .accessibilityAddTraits(selected ? .isSelected : [])
     }
@@ -271,8 +277,8 @@ struct CompareControl: View {
     @ObservedObject var effects: EffectsStore
     var identifier = "compare-original"
     var body: some View {
-        Text(effects.snapshot.original ? "正在查看原图" : "按住对比原图").font(.system(size: 14, weight: .bold))
-            .foregroundColor(ink).frame(maxWidth: .infinity, maxHeight: .infinity).background(accent).cornerRadius(26).contentShape(Rectangle())
+        Text(effects.snapshot.original ? "正在查看原图" : "按住对比原图").font(.system(size: 11, weight: .bold))
+            .foregroundColor(ink).frame(maxWidth: .infinity, maxHeight: .infinity).background(accent.opacity(0.88)).cornerRadius(14).contentShape(Rectangle())
             // Set the flag on touch down / up directly; onChange of a GestureState is not delivered reliably.
             .highPriorityGesture(DragGesture(minimumDistance: 0)
                 .onChanged { _ in if !effects.snapshot.original { effects.snapshot.original = true } }

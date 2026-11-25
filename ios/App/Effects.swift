@@ -25,6 +25,7 @@ enum Effects {
         (.init(key: "vintage", name: "复古红"), [0.476, 0.018, 0.025, 0.777])
     ]
     static let skin = [EffectParameter(index: 0, name: "磨皮"), .init(index: 1, name: "美白"), .init(index: 2, name: "红润"),
+        .init(index: 38, name: "眼妆"),
         .init(index: 28, name: "锐化"), .init(index: 29, name: "清晰"), .init(index: 30, name: "祛斑痘"),
         .init(index: 31, name: "亮眼"), .init(index: 32, name: "美牙"), .init(index: 33, name: "去黑眼圈"),
         .init(index: 34, name: "去法令纹"), .init(index: 35, name: "五官立体")]
@@ -68,9 +69,22 @@ struct EffectSnapshot: Equatable {
     var values: [Float] = {
         var values = [Float](repeating: 0, count: 40)
         for parameter in Effects.skin + Effects.shape { values[parameter.index] = parameter.neutral }
-        values[0] = 0.6; values[1] = 0.5; values[2] = 0.1; values[36] = 0.6; values[37] = 0.6
+        values[0] = 0.6; values[1] = 0.48; values[2] = 0.1
+        values[29] = 0.12; values[30] = 0.38; values[31] = 0.28
+        values[33] = 0.45; values[34] = 0.35; values[35] = 0.28
+        values[36] = 0.6; values[37] = 0.6; values[38] = 0.58
         return values
     }()
+    static func malePreset() -> EffectSnapshot {
+        var s = EffectSnapshot()
+        s.values[0] = 0.45; s.values[1] = 0.22; s.values[2] = 0.08
+        s.values[28] = 0.16; s.values[29] = 0.16; s.values[30] = 0.35; s.values[31] = 0.20
+        s.values[33] = 0.40; s.values[34] = 0.20; s.values[35] = 0.40; s.values[38] = 0.68
+        s.style = ""; s.filter = ""; s.filterFollowsMakeup = false
+        s.values[37] = 0.0
+        s.lipstick = "coral"; s.lipstickAmounts["coral"] = 0.18
+        return s
+    }
     var style = Effects.styles.dropFirst().first?.key ?? ""
     var filter = Effects.styles.dropFirst().first?.makeupFilter ?? ""
     var filterFollowsMakeup = true
@@ -104,6 +118,7 @@ struct EffectSnapshot: Equatable {
 
 final class EffectsStore: ObservableObject {
     @Published var snapshot = EffectSnapshot()
+    @Published var malePreset = false
     @Published var category = 0
     @Published var selectedSkin = 0
     @Published var selectedShape = 3
@@ -115,7 +130,8 @@ final class EffectsStore: ObservableObject {
     var currentTitle: String { category == 2 ? "妆容浓度" : category == 3 ? "滤镜" : category == 4 ? "口红" : currentParameter?.name ?? "强度" }
     var amountEnabled: Bool { category < 2 || (category == 2 ? !snapshot.style.isEmpty : category == 3 ? !snapshot.filter.isEmpty : !snapshot.lipstick.isEmpty) }
     var adjustedCount: Int { (Effects.skin + Effects.shape).filter { adjusted($0.index) }.count }
-    func adjusted(_ index: Int) -> Bool { abs(snapshot.values[index] - EffectSnapshot().values[index]) > 0.005 }
+    func currentDefaults() -> EffectSnapshot { malePreset ? EffectSnapshot.malePreset() : EffectSnapshot() }
+    func adjusted(_ index: Int) -> Bool { abs(snapshot.values[index] - currentDefaults().values[index]) > 0.005 }
     func displayValue() -> String {
         let number = Int(((category == 4 ? snapshot.lipstickAmount : snapshot.values[selectedIndex]) * 100).rounded())
         if currentParameter?.neutral == 0.5 {
@@ -124,8 +140,9 @@ final class EffectsStore: ObservableObject {
         }
         return "\(number)"
     }
-    func restoreCurrent() { snapshot.values[selectedIndex] = EffectSnapshot().values[selectedIndex] }
-    func reset() { snapshot = EffectSnapshot(); selectedSkin = 0; selectedShape = 3 }
+    func restoreCurrent() { snapshot.values[selectedIndex] = currentDefaults().values[selectedIndex] }
+    func applyGenderPreset(_ male: Bool) { malePreset = male; snapshot = currentDefaults() }
+    func reset() { snapshot = currentDefaults(); selectedSkin = 0; selectedShape = 3 }
     init(bundle: Bundle = .main) {
         assets = (try? SampleSPMResources.assets.get()) ?? bundle.bundleURL.appendingPathComponent("Assets")
         filters = Effects.filters(at: assets)

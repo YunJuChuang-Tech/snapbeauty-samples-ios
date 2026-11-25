@@ -69,9 +69,9 @@ final class SampleTests: XCTestCase {
     func testFourScenesAndParameterContract() {
         XCTAssertEqual(Bundle.main.bundleIdentifier, "ai.snapbeauty.samples")
         XCTAssertEqual(SampleScene.allCases.map(\.name), ["相机美颜", "腾讯云 TRTC", "声网 Agora", "即构 ZEGO"])
-        XCTAssertEqual(Effects.skin.count, 11)
+        XCTAssertEqual(Effects.skin.count, 12)
         XCTAssertEqual(Effects.shape.count, 25)
-        XCTAssertEqual(Set((Effects.skin + Effects.shape).map(\.index)), Set(0..<36))
+        XCTAssertEqual(Set((Effects.skin + Effects.shape).map(\.index)), Set(0..<36).union([38]))
         let snapshot = EffectSnapshot()
         XCTAssertEqual(snapshot.sdkValues.count, 45)
         XCTAssertEqual(snapshot.sdkValues[0].floatValue, 3.6, accuracy: 0.0001)
