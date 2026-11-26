@@ -78,7 +78,10 @@ final class CameraCapture: NSObject, AVCaptureVideoDataOutputSampleBufferDelegat
         guard session.canAddInput(input) else { throw CocoaError(.featureUnsupported) }
         session.addInput(input)
         try device.lockForConfiguration()
-        if device.activeFormat.videoSupportedFrameRateRanges.contains(where: { $0.minFrameRate <= 15 && $0.maxFrameRate >= 15 }) {
+        if device.activeFormat.videoSupportedFrameRateRanges.contains(where: { $0.minFrameRate <= 30 && $0.maxFrameRate >= 30 }) {
+            device.activeVideoMinFrameDuration = CMTime(value: 1, timescale: 30)
+            device.activeVideoMaxFrameDuration = CMTime(value: 1, timescale: 30)
+        } else if device.activeFormat.videoSupportedFrameRateRanges.contains(where: { $0.minFrameRate <= 15 && $0.maxFrameRate >= 15 }) {
             device.activeVideoMinFrameDuration = CMTime(value: 1, timescale: 15)
             device.activeVideoMaxFrameDuration = CMTime(value: 1, timescale: 15)
         }

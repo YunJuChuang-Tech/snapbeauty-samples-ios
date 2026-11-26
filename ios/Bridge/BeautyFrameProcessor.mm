@@ -1,5 +1,6 @@
 #import "BeautyFrameProcessor.h"
 #import "SnapBeauty.h"
+#import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 
 // The app only maps its normalized controls and owns the returned video buffers.
@@ -109,12 +110,14 @@
     // The release can return RGBA render targets despite documenting BGRA output.
     // Convert according to the actual Metal format before handing frames to RTC.
     if (texture.pixelFormat == MTLPixelFormatRGBA8Unorm) {
-        uint8_t *bytes = (uint8_t *)CVPixelBufferGetBaseAddress(output);
-        size_t stride = CVPixelBufferGetBytesPerRow(output);
-        for (NSUInteger y = 0; y < texture.height; ++y) for (NSUInteger x = 0; x < texture.width; ++x) {
-            uint8_t *pixel = bytes + y * stride + x * 4;
-            uint8_t red = pixel[0]; pixel[0] = pixel[2]; pixel[2] = red;
-        }
+        vImage_Buffer buf = {
+            .data = CVPixelBufferGetBaseAddress(output),
+            .height = (vImagePixelCount)texture.height,
+            .width = (vImagePixelCount)texture.width,
+            .rowBytes = CVPixelBufferGetBytesPerRow(output)
+        };
+        const uint8_t permute[4] = {2, 1, 0, 3};
+        vImagePermuteChannels_ARGB8888(&buf, &buf, permute, kvImageNoFlags);
     }
     CVPixelBufferUnlockBaseAddress(output, 0);
     _cost = (CACurrentMediaTime() - start) * 1000;

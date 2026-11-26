@@ -72,7 +72,7 @@ struct EffectSnapshot: Equatable {
         values[0] = 0.6; values[1] = 0.48; values[2] = 0.1
         values[29] = 0.12; values[30] = 0.38; values[31] = 0.28
         values[33] = 0.45; values[34] = 0.35; values[35] = 0.28
-        values[36] = 0.6; values[37] = 0.6; values[38] = 0.58
+        values[36] = 0.6; values[37] = 0.6; values[38] = 0.9
         return values
     }()
     static func malePreset() -> EffectSnapshot {
@@ -80,7 +80,7 @@ struct EffectSnapshot: Equatable {
         s.values[0] = 0.65; s.values[1] = 0.38; s.values[2] = 0.12
         s.values[3] = 0.24; s.values[4] = 0.16; s.values[7] = 0.15; s.values[10] = 0.18; s.values[14] = 0.14
         s.values[28] = 0.22; s.values[29] = 0.06; s.values[30] = 0.48; s.values[31] = 0.28
-        s.values[33] = 0.55; s.values[34] = 0.35; s.values[35] = 0.18; s.values[38] = 0.25
+        s.values[33] = 0.55; s.values[34] = 0.35; s.values[35] = 0.18; s.values[38] = 0.4
         s.style = ""; s.filter = ""; s.filterFollowsMakeup = false
         s.values[37] = 0.0
         s.lipstick = "coral"; s.lipstickAmounts["coral"] = 0.26
