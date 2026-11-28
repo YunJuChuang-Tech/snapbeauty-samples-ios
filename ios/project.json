@@ -217,7 +217,7 @@
   "packages": {
     "SnapBeautySDK": {
       "url": "https://github.com/YunJuChuang-Tech/snapbeauty-ios-sdk.git",
-      "exactVersion": "1.3.7"
+      "exactVersion": "1.3.9"
     }
   }
 }

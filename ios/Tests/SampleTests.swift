@@ -10,7 +10,7 @@ final class SampleTests: XCTestCase {
     func testRemotePackageResources() throws {
         let root = try SampleSPMResources.assets.get()
         try EffectsStore.validateAssets(root)
-        XCTAssertEqual(BeautyFrameProcessor.sdkVersion(), "1.3.7")
+        XCTAssertEqual(BeautyFrameProcessor.sdkVersion(), "1.3.9")
         XCTAssertEqual(Effects.filters(at: root).count, 28) // original + 17 built in + 10 host filters
         XCTAssertEqual(((try? FileManager.default.contentsOfDirectory(atPath: root.appendingPathComponent("host-filters/luts").path)) ?? []).count, 10)
         XCTAssertTrue(FileManager.default.fileExists(atPath: SnapBeautyResources.shaders.appendingPathComponent("snapbeauty.metallib").path))
@@ -185,7 +185,7 @@ final class SampleTests: XCTestCase {
         let original = rows(input)
         let processor = try XCTUnwrap(BeautyFrameProcessor(assets: try SampleSPMResources.assets.get().path,
             shaders: SnapBeautyResources.shaders.path))
-        XCTAssertEqual(BeautyFrameProcessor.sdkVersion(), "1.3.7")
+        XCTAssertEqual(BeautyFrameProcessor.sdkVersion(), "1.3.9")
         XCTAssertThrowsError(try processor.process(input, values: EffectSnapshot().sdkValues, style: nil, filter: nil, maxFaces: 4))
         var neutral = EffectSnapshot()
         for item in Effects.skin + Effects.shape { neutral.values[item.index] = item.neutral }
